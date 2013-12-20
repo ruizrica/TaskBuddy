@@ -7,21 +7,48 @@
 //
 
 #import "createVC.h"
+#import "RFKeyboardToolbar/RFKeyboardToolbar.h"
 
 
 @implementation createVC
-@synthesize tf_taskName, tf_taskDueDate, tv_taskDescription, uis_prioritySwitch/*, taskData*/;
+@synthesize tf_taskName, tf_taskDueDate, tv_taskDescription;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     self.title = @"Create Task";
 
     tv_taskDescription.placeholder = @"Description";
-    //[tf_taskName becomeFirstResponder];
+    [tf_taskName becomeFirstResponder];
     
 }
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    
+    RFToolbarButton *exampleButton = [RFToolbarButton new];
+    // This is a RFToolbarButton subclass - you set the button title and the button's target in this subclass
+    // You then import the subclass, and then alloc and init it with new
+    
+    tv_taskDescription = [[UITextView alloc] initWithFrame:self.view.bounds];
+    // The underscore is to access the UITextView variable set in the @interface (you can see this in the demo)
+    
+    [RFKeyboardToolbar addToTextView:tv_taskDescription withButtons:@[exampleButton]];
+    // Here's where the new magic happens (previously you could use UITextInput, and not have to worry about adding it for a UITextView/UIToolbar)**
+    // The array is the arry of buttons you created and have "newed" above.  They will appear in the order you
+    // add them from left to right.  You can access the textfield/view in the button subclasses to insert text
+    // or do whatever you want via [RFToolbarButton textInput].  But you can see this in the example as well.
+    
+    // ** while working on RFMarkdownTextView, I realized that UITextInput is much less documented, and this isn't that much different, so I went with this.
+    
+    [self.view addSubview:tv_taskDescription];
+    
+    
+    
+    
+    return YES;
+}
+
 
 #pragma mark - RMDateSelectionViewController Delegates
 - (void)dateSelectionViewController:(RMDateSelectionViewController *)vc didSelectDate:(NSDate *)aDate {
@@ -35,10 +62,13 @@
     tf_taskDueDate.text = dateString;
 }
 
+
 - (void)dateSelectionViewControllerDidCancel:(RMDateSelectionViewController *)vc {
     NSLog(@"User Cancelled Input");
 }
 
+
+// Button Action for Due Date
 - (IBAction)selectDueDate:(id)sender {
     [tf_taskName resignFirstResponder];
     [tv_taskDescription resignFirstResponder];
@@ -49,38 +79,57 @@
     [dateSelectionVC show];
 }
 
+// Button Action for Saving Task
+// - Needs GCD code.
 - (IBAction)saveTask:(id)sender {
-    
-    isPriority = uis_prioritySwitch.selected;
-    
     taskModel *taskData = [[taskModel alloc]init];
     
     taskData.taskName = tf_taskName.text;
     taskData.taskDueDate = local_taskDueDate;
     taskData.taskDescription = tv_taskDescription.text;
-    //taskData.taskPriority = isPriority;
-    //NSString *boolString = [NSString stringWithFormat: @" %s", isPriority ? "true" : "false"];
-    
-    //Used for model debugging
-    //
-    //NSString *logString = [NSString stringWithFormat:@"%@, %@,", taskData.taskName, taskData.taskDescription];
-    //NSLog(logString);
     
     PFObject *taskObject = [PFObject objectWithClassName:@"task"];
     [taskObject setObject:taskData.taskName forKey:@"taskName"];
     [taskObject setObject:taskData.taskDueDate forKey:@"taskDueDate"];
     [taskObject setObject:taskData.taskDescription forKey:@"taskDescription"];
-    //[taskObject setObject:NO forKey:@"priority"];
- 
-    //taskObject[@"priority"] = uis_prioritySwitch.selected;
     [taskObject saveInBackground];
     
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"TaskBuddy" message:@"Your Task Was Saved" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    // Schedule the notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = taskData.taskDueDate;
+    localNotification.alertBody = taskData.taskName;
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.alertAction = @"Show me the item";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"TaskBuddy"
+                                                   message:@"Your Task Was Saved"
+                                                  delegate:self
+                                         cancelButtonTitle:@"Ok"
+                                         otherButtonTitles: nil];
     
     [alert show];
 }
+
+// Event Handler for AlertView
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 - (IBAction)dismissKeyboard:(id)sender {
+    [self dismissKeyboardAction];
+}
+
+- (void)dismissKeyboardAction {
     [tf_taskName resignFirstResponder];
     [tv_taskDescription resignFirstResponder];
 }
+
+
 @end

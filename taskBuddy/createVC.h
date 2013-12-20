@@ -12,19 +12,17 @@
 #import "GCPlaceholderTextView.h"
 #import "taskModel.h"
 
-@interface createVC : UIViewController<RMDateSelectionViewControllerDelegate> {
+@interface createVC : UIViewController<RMDateSelectionViewControllerDelegate, UIAlertViewDelegate, UITextViewDelegate> {
     NSDate *local_taskDueDate;
-    Boolean isPriority;
     
 }
-- (IBAction)selectDueDate:(id)sender;
-- (IBAction)saveTask:(id)sender;
-- (IBAction)dismissKeyboard:(id)sender;
-@property (strong, nonatomic) IBOutlet UISwitch *uis_prioritySwitch;
+
 @property (strong, nonatomic) IBOutlet UITextField *tf_taskName;
 @property (strong, nonatomic) IBOutlet UITextField *tf_taskDueDate;
 @property (strong, nonatomic) IBOutlet GCPlaceholderTextView *tv_taskDescription;
 
-//@property (strong,nonatomic) taskModel *taskData;
+- (IBAction)selectDueDate:(id)sender;
+- (IBAction)saveTask:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
 
 @end
