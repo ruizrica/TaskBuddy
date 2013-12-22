@@ -24,9 +24,9 @@
     
 }
 
-- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+- (void)textViewDidBeginEditing:(UITextView *)textView {
     
-    RFToolbarButton *exampleButton = [RFToolbarButton new];
+    /*RFToolbarButton *exampleButton = [RFToolbarButton new];
     // This is a RFToolbarButton subclass - you set the button title and the button's target in this subclass
     // You then import the subclass, and then alloc and init it with new
     
@@ -41,12 +41,12 @@
     
     // ** while working on RFMarkdownTextView, I realized that UITextInput is much less documented, and this isn't that much different, so I went with this.
     
-    [self.view addSubview:tv_taskDescription];
+    [self.view addSubview:tv_taskDescription];*/
     
     
+    NSLog(@"user started editing");
     
-    
-    return YES;
+
 }
 
 

@@ -71,6 +71,8 @@
 @property (nonatomic, weak) NSLayoutConstraint *heightConstraint;
 
 @property (weak) IBOutlet UIButton *nowButton;
+@property (weak) IBOutlet UIButton *tomorrowButton;
+@property (weak) IBOutlet UIButton *inWeekButton;
 
 @property (weak) IBOutlet UIView *datePickerContainer;
 @property (weak, readwrite) IBOutlet UIDatePicker *datePicker;
@@ -193,6 +195,8 @@
     self.view.layer.masksToBounds = YES;
     
     self.nowButton.layer.cornerRadius = 5;
+    self.inWeekButton.layer.cornerRadius = 5;
+    self.tomorrowButton.layer.cornerRadius = 5;
     
     self.datePickerContainer.layer.cornerRadius = 5;
     self.datePicker.layer.cornerRadius = 5;
@@ -203,12 +207,16 @@
     
     if(self.tintColor) {
         self.nowButton.tintColor = self.tintColor;
+        self.tomorrowButton.tintColor = self.tintColor;
+        self.inWeekButton.tintColor = self.tintColor;
         self.cancelButton.tintColor = self.tintColor;
         self.selectButton.tintColor = self.tintColor;
     }
     
     if(self.backgroundColor) {
         self.nowButton.backgroundColor = self.backgroundColor;
+        self.tomorrowButton.backgroundColor = self.tintColor;
+        self.inWeekButton.backgroundColor = self.tintColor;
         self.datePickerContainer.backgroundColor = self.backgroundColor;
         self.cancelAndSelectButtonContainer.backgroundColor = self.backgroundColor;
     }
@@ -310,6 +318,8 @@
         _tintColor = newTintColor;
         
         self.nowButton.tintColor = newTintColor;
+        self.tomorrowButton.tintColor = newTintColor;
+        self.inWeekButton.tintColor = newTintColor;
         self.cancelButton.tintColor = newTintColor;
         self.selectButton.tintColor = newTintColor;
     }
@@ -320,6 +330,8 @@
         _backgroundColor = newBackgroundColor;
         
         self.nowButton.backgroundColor = newBackgroundColor;
+        self.tomorrowButton.backgroundColor = newBackgroundColor;
+        self.inWeekButton.backgroundColor = newBackgroundColor;
         self.datePickerContainer.backgroundColor = newBackgroundColor;
         self.cancelAndSelectButtonContainer.backgroundColor = newBackgroundColor;
     }
@@ -386,7 +398,24 @@
 }
 
 - (IBAction)nowButtonPressed:(id)sender {
-    [self.datePicker setDate:[[NSDate date] dateByRoundingToMinutes:self.datePicker.minuteInterval]];
+    NSTimeInterval twoHours = 2 * 60 * 60;
+    NSDate *twoHoursAhead = [[[NSDate date] dateByRoundingToMinutes:self.datePicker.minuteInterval] dateByAddingTimeInterval:twoHours];
+    
+    [self.datePicker setDate:twoHoursAhead];
+}
+
+- (IBAction)tomorrowButtonPressed:(id)sender {
+    NSTimeInterval secondsIn24Hours = 24 * 60 * 60;
+    NSDate *twentyFourHoursAhead = [[[NSDate date] dateByRoundingToMinutes:self.datePicker.minuteInterval] dateByAddingTimeInterval:secondsIn24Hours];
+    
+    [self.datePicker setDate:twentyFourHoursAhead];
+}
+
+- (IBAction)oneWeekButtonPressed:(id)sender {
+    NSTimeInterval secondsInWeek = 168 * 60 * 60;
+    NSDate *oneWeekAhead = [[[NSDate date] dateByRoundingToMinutes:self.datePicker.minuteInterval] dateByAddingTimeInterval:secondsInWeek];
+    
+    [self.datePicker setDate:oneWeekAhead];
 }
 
 @end
