@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "createVC.h"
 #import "listVC.h"
+#import "menuCell.h"
 
 @interface ViewController () {
     NSArray *menuItems;
@@ -44,9 +45,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    menuCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [menuItems objectAtIndex:indexPath.row];
+    cell.menuCell_namelabel.text = [menuItems objectAtIndex:indexPath.row];
     
     return cell;
 }

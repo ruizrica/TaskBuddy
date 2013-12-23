@@ -402,6 +402,7 @@
     NSDate *twoHoursAhead = [[[NSDate date] dateByRoundingToMinutes:self.datePicker.minuteInterval] dateByAddingTimeInterval:twoHours];
     
     [self.datePicker setDate:twoHoursAhead];
+
 }
 
 - (IBAction)tomorrowButtonPressed:(id)sender {
@@ -409,6 +410,8 @@
     NSDate *twentyFourHoursAhead = [[[NSDate date] dateByRoundingToMinutes:self.datePicker.minuteInterval] dateByAddingTimeInterval:secondsIn24Hours];
     
     [self.datePicker setDate:twentyFourHoursAhead];
+    
+
 }
 
 - (IBAction)oneWeekButtonPressed:(id)sender {
@@ -416,6 +419,7 @@
     NSDate *oneWeekAhead = [[[NSDate date] dateByRoundingToMinutes:self.datePicker.minuteInterval] dateByAddingTimeInterval:secondsInWeek];
     
     [self.datePicker setDate:oneWeekAhead];
+    
 }
 
 @end

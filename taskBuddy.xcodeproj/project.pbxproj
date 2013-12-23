@@ -16,6 +16,7 @@
 		EB50E0DC18590EDF00ECA2F3 /* listVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB50E0DB18590EDF00ECA2F3 /* listVC.m */; };
 		EB6EA3D718642A2B00FAEBB5 /* RFKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3D418642A2B00FAEBB5 /* RFKeyboardToolbar.m */; };
 		EB6EA3D818642A2B00FAEBB5 /* RFToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */; };
+		EB6EA3DB1867EB3900FAEBB5 /* menuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3DA1867EB3900FAEBB5 /* menuCell.m */; };
 		EB95A740186168C7008BBF93 /* location-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A738186168C7008BBF93 /* location-100.png */; };
 		EB95A741186168C7008BBF93 /* location-128.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A739186168C7008BBF93 /* location-128.png */; };
 		EB95A742186168C7008BBF93 /* location-25.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A73A186168C7008BBF93 /* location-25.png */; };
@@ -83,6 +84,8 @@
 		EB6EA3D418642A2B00FAEBB5 /* RFKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFKeyboardToolbar.m; sourceTree = "<group>"; };
 		EB6EA3D518642A2B00FAEBB5 /* RFToolbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFToolbarButton.h; sourceTree = "<group>"; };
 		EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFToolbarButton.m; sourceTree = "<group>"; };
+		EB6EA3D91867EB3900FAEBB5 /* menuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuCell.h; sourceTree = "<group>"; };
+		EB6EA3DA1867EB3900FAEBB5 /* menuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuCell.m; sourceTree = "<group>"; };
 		EB95A738186168C7008BBF93 /* location-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-100.png"; sourceTree = "<group>"; };
 		EB95A739186168C7008BBF93 /* location-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-128.png"; sourceTree = "<group>"; };
 		EB95A73A186168C7008BBF93 /* location-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-25.png"; sourceTree = "<group>"; };
@@ -325,6 +328,8 @@
 			children = (
 				EBE2AE5618583660008E70EA /* ViewController.h */,
 				EBE2AE5718583660008E70EA /* ViewController.m */,
+				EB6EA3D91867EB3900FAEBB5 /* menuCell.h */,
+				EB6EA3DA1867EB3900FAEBB5 /* menuCell.m */,
 			);
 			name = MainVC;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 				EB50E0DC18590EDF00ECA2F3 /* listVC.m in Sources */,
 				EBE2AE5818583660008E70EA /* ViewController.m in Sources */,
 				EBE2AE5218583660008E70EA /* AppDelegate.m in Sources */,
+				EB6EA3DB1867EB3900FAEBB5 /* menuCell.m in Sources */,
 				EBE2AE4E18583660008E70EA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
