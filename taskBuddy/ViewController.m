@@ -13,6 +13,7 @@
 
 @interface ViewController () {
     NSArray *menuItems;
+    NSArray *menuImages;
 }
 
 @end
@@ -26,6 +27,8 @@
 	// Do any additional setup after loading the view, typically from a nib
     
     menuItems = @[@"Create Task",@"Task List",@"Set Reminder"];
+    
+    menuImages = @[@"menu_icon1.png", @"menu_icon2.png", @"menu_icon3.png"];
     
 }
 #pragma mark - Table view data source
@@ -48,6 +51,8 @@
     menuCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.menuCell_namelabel.text = [menuItems objectAtIndex:indexPath.row];
+    
+    cell.menuCell_image.image = [UIImage imageNamed:[menuImages objectAtIndex:indexPath.row]];
     
     return cell;
 }

@@ -17,6 +17,9 @@
 		EB6EA3D718642A2B00FAEBB5 /* RFKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3D418642A2B00FAEBB5 /* RFKeyboardToolbar.m */; };
 		EB6EA3D818642A2B00FAEBB5 /* RFToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */; };
 		EB6EA3DB1867EB3900FAEBB5 /* menuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3DA1867EB3900FAEBB5 /* menuCell.m */; };
+		EB6EA3E318682B8000FAEBB5 /* menu_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6EA3E118682B8000FAEBB5 /* menu_icon1.png */; };
+		EB6EA3E618682B9B00FAEBB5 /* menu_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6EA3E518682B9B00FAEBB5 /* menu_icon2.png */; };
+		EB6EA3E818682DB300FAEBB5 /* menu_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6EA3E718682DB300FAEBB5 /* menu_icon3.png */; };
 		EB95A740186168C7008BBF93 /* location-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A738186168C7008BBF93 /* location-100.png */; };
 		EB95A741186168C7008BBF93 /* location-128.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A739186168C7008BBF93 /* location-128.png */; };
 		EB95A742186168C7008BBF93 /* location-25.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A73A186168C7008BBF93 /* location-25.png */; };
@@ -86,6 +89,9 @@
 		EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFToolbarButton.m; sourceTree = "<group>"; };
 		EB6EA3D91867EB3900FAEBB5 /* menuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuCell.h; sourceTree = "<group>"; };
 		EB6EA3DA1867EB3900FAEBB5 /* menuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuCell.m; sourceTree = "<group>"; };
+		EB6EA3E118682B8000FAEBB5 /* menu_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon1.png; sourceTree = "<group>"; };
+		EB6EA3E518682B9B00FAEBB5 /* menu_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon2.png; sourceTree = "<group>"; };
+		EB6EA3E718682DB300FAEBB5 /* menu_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon3.png; sourceTree = "<group>"; };
 		EB95A738186168C7008BBF93 /* location-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-100.png"; sourceTree = "<group>"; };
 		EB95A739186168C7008BBF93 /* location-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-128.png"; sourceTree = "<group>"; };
 		EB95A73A186168C7008BBF93 /* location-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-25.png"; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 		EB4BF0A3186130450037A02D /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EB6EA3E018682B5500FAEBB5 /* menuIcons */,
 				EB95A737186168C7008BBF93 /* location */,
 				EB4BF0A1186130370037A02D /* tb_formBack.png */,
 				EB4BF09F186130070037A02D /* tb_formBack@2x.png */,
@@ -211,6 +218,16 @@
 				EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */,
 			);
 			path = RFKeyboardToolbar;
+			sourceTree = "<group>";
+		};
+		EB6EA3E018682B5500FAEBB5 /* menuIcons */ = {
+			isa = PBXGroup;
+			children = (
+				EB6EA3E718682DB300FAEBB5 /* menu_icon3.png */,
+				EB6EA3E518682B9B00FAEBB5 /* menu_icon2.png */,
+				EB6EA3E118682B8000FAEBB5 /* menu_icon1.png */,
+			);
+			name = menuIcons;
 			sourceTree = "<group>";
 		};
 		EB95A737186168C7008BBF93 /* location */ = {
@@ -445,9 +462,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4BF076186118A60037A02D /* RMDateSelectionViewController.xib in Resources */,
+				EB6EA3E618682B9B00FAEBB5 /* menu_icon2.png in Resources */,
 				EB95A745186168C7008BBF93 /* location-50.png in Resources */,
 				EB95A746186168C7008BBF93 /* location-512.png in Resources */,
 				EB95A742186168C7008BBF93 /* location-25.png in Resources */,
+				EB6EA3E818682DB300FAEBB5 /* menu_icon3.png in Resources */,
 				EB95A743186168C7008BBF93 /* location-256.png in Resources */,
 				EBE2AE5A18583660008E70EA /* Images.xcassets in Resources */,
 				EBE2AE4C18583660008E70EA /* InfoPlist.strings in Resources */,
@@ -457,6 +476,7 @@
 				EBE2AE5518583660008E70EA /* Main.storyboard in Resources */,
 				EB95A740186168C7008BBF93 /* location-100.png in Resources */,
 				EB95A747186168C7008BBF93 /* location-75.png in Resources */,
+				EB6EA3E318682B8000FAEBB5 /* menu_icon1.png in Resources */,
 				EB95A744186168C7008BBF93 /* location-32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
