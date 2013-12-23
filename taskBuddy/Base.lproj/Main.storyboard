@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZYw-oQ-fyV">
-                                <rect key="frame" x="0.0" y="204" width="320" height="235"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZYw-oQ-fyV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="235"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -51,8 +51,24 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="RyC-qk-vO9"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="rzj-ef-QpU">
+                                <rect key="frame" x="0.0" y="401" width="320" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="167" id="kfN-aO-YXP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="rzj-ef-QpU" secondAttribute="bottom" id="B5h-1G-4ik"/>
+                            <constraint firstItem="rzj-ef-QpU" firstAttribute="trailing" secondItem="ZYw-oQ-fyV" secondAttribute="trailing" id="Pl0-26-zat"/>
+                            <constraint firstItem="zVH-Jr-UyO" firstAttribute="top" secondItem="ZYw-oQ-fyV" secondAttribute="bottom" constant="333" id="SPJ-Bv-a5r"/>
+                            <constraint firstAttribute="trailing" secondItem="ZYw-oQ-fyV" secondAttribute="trailing" id="dvu-sr-vJU"/>
+                            <constraint firstItem="ZYw-oQ-fyV" firstAttribute="top" secondItem="dZr-xG-0e0" secondAttribute="bottom" constant="-64" id="h2L-en-NtW"/>
+                            <constraint firstItem="rzj-ef-QpU" firstAttribute="leading" secondItem="ZYw-oQ-fyV" secondAttribute="leading" id="xxx-Uj-IEW"/>
+                            <constraint firstItem="ZYw-oQ-fyV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="y9w-gK-oR3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TaskBuddy 1.0" id="Wcb-5p-9ju"/>
                     <connections>
@@ -229,6 +245,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background.png" width="320" height="167"/>
         <image name="tb_formBack.png" width="320" height="233"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

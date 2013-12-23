@@ -28,6 +28,7 @@
 		EB95A745186168C7008BBF93 /* location-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A73D186168C7008BBF93 /* location-50.png */; };
 		EB95A746186168C7008BBF93 /* location-512.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A73E186168C7008BBF93 /* location-512.png */; };
 		EB95A747186168C7008BBF93 /* location-75.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A73F186168C7008BBF93 /* location-75.png */; };
+		EBB721A218684F2200B0E2A1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB721A118684F2200B0E2A1 /* background.png */; };
 		EBE2AE4218583660008E70EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE2AE4118583660008E70EA /* Foundation.framework */; };
 		EBE2AE4418583660008E70EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE2AE4318583660008E70EA /* CoreGraphics.framework */; };
 		EBE2AE4618583660008E70EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE2AE4518583660008E70EA /* UIKit.framework */; };
@@ -100,6 +101,7 @@
 		EB95A73D186168C7008BBF93 /* location-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-50.png"; sourceTree = "<group>"; };
 		EB95A73E186168C7008BBF93 /* location-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-512.png"; sourceTree = "<group>"; };
 		EB95A73F186168C7008BBF93 /* location-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-75.png"; sourceTree = "<group>"; };
+		EBB721A118684F2200B0E2A1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		EBE2AE3E18583660008E70EA /* taskBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE2AE4118583660008E70EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBE2AE4318583660008E70EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -223,6 +225,7 @@
 		EB6EA3E018682B5500FAEBB5 /* menuIcons */ = {
 			isa = PBXGroup;
 			children = (
+				EBB721A118684F2200B0E2A1 /* background.png */,
 				EB6EA3E718682DB300FAEBB5 /* menu_icon3.png */,
 				EB6EA3E518682B9B00FAEBB5 /* menu_icon2.png */,
 				EB6EA3E118682B8000FAEBB5 /* menu_icon1.png */,
@@ -468,6 +471,7 @@
 				EB95A742186168C7008BBF93 /* location-25.png in Resources */,
 				EB6EA3E818682DB300FAEBB5 /* menu_icon3.png in Resources */,
 				EB95A743186168C7008BBF93 /* location-256.png in Resources */,
+				EBB721A218684F2200B0E2A1 /* background.png in Resources */,
 				EBE2AE5A18583660008E70EA /* Images.xcassets in Resources */,
 				EBE2AE4C18583660008E70EA /* InfoPlist.strings in Resources */,
 				EB4BF0A0186130070037A02D /* tb_formBack@2x.png in Resources */,
