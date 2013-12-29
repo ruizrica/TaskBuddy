@@ -56,6 +56,7 @@
 		EBE2AE91185840AA008E70EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE2AE90185840AA008E70EA /* StoreKit.framework */; };
 		EBE2AE93185840BA008E70EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE2AE92185840BA008E70EA /* SystemConfiguration.framework */; };
 		EBE2AE97185842E8008E70EA /* taskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE2AE96185842E8008E70EA /* taskModel.m */; };
+		EBE34A21186FE6BC00FC3E24 /* textview_end.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE34A20186FE6BC00FC3E24 /* textview_end.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		EBE2AE92185840BA008E70EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EBE2AE95185842E8008E70EA /* taskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = taskModel.h; sourceTree = "<group>"; };
 		EBE2AE96185842E8008E70EA /* taskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = taskModel.m; sourceTree = "<group>"; };
+		EBE34A20186FE6BC00FC3E24 /* textview_end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textview_end.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 		EB4BF0A3186130450037A02D /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EBE34A20186FE6BC00FC3E24 /* textview_end.png */,
 				EB6EA3E018682B5500FAEBB5 /* menuIcons */,
 				EB95A737186168C7008BBF93 /* location */,
 				EB4BF0A1186130370037A02D /* tb_formBack.png */,
@@ -500,6 +503,7 @@
 				EBB721A218684F2200B0E2A1 /* background.png in Resources */,
 				EBE2AE5A18583660008E70EA /* Images.xcassets in Resources */,
 				EBE2AE4C18583660008E70EA /* InfoPlist.strings in Resources */,
+				EBE34A21186FE6BC00FC3E24 /* textview_end.png in Resources */,
 				EB4BF0A0186130070037A02D /* tb_formBack@2x.png in Resources */,
 				EB95A741186168C7008BBF93 /* location-128.png in Resources */,
 				EB4BF0A2186130370037A02D /* tb_formBack.png in Resources */,

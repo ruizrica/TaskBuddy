@@ -114,6 +114,17 @@
     [self dismissKeyboardAction];
 }
 
+- (IBAction)shareContent:(id)sender {
+    
+    NSString *titleString = tf_taskName.text;
+    NSString *descriptionString = tv_taskDescription.text;
+    
+    NSArray *objectsToShare = @[titleString,descriptionString];
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
 - (void)dismissKeyboardAction {
     [tf_taskName resignFirstResponder];
     [tv_taskDescription resignFirstResponder];

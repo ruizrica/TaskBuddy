@@ -123,17 +123,11 @@
         [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         }];
         [self loadObjects];
+        
+        
     }
     
 }
-
-
-
-
-
-
-
-
 
 /*
  // Override to support rearranging the table view.

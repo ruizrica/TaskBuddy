@@ -99,7 +99,7 @@
                                     <constraint firstAttribute="height" constant="28" id="d2F-vF-m6m"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="NLm-sK-z5h" id="ht5-Eg-djB"/>
@@ -108,7 +108,7 @@
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Due Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agh-cn-at4">
                                 <rect key="frame" x="18" y="59" width="288" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.30196079609999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
@@ -131,10 +131,10 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="ONP-XL-yzv" customClass="GCPlaceholderTextView">
-                                <rect key="frame" x="14" y="98" width="292" height="215"/>
+                                <rect key="frame" x="14" y="98" width="292" height="227"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="Wxr-XV-64E"/>
+                                    <constraint firstAttribute="height" constant="227" id="Wxr-XV-64E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
@@ -144,7 +144,13 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="vW1-rm-teI"/>
+                                    <barButtonItem systemItem="action" id="vW1-rm-teI">
+                                        <connections>
+                                            <action selector="shareContent:" destination="NLm-sK-z5h" id="zbv-eR-Ke3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="27" style="plain" systemItem="fixedSpace" id="LkM-W6-QI7"/>
+                                    <barButtonItem systemItem="camera" id="Kzo-Fe-Jt2"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="NbQ-mJ-KF9"/>
                                     <barButtonItem systemItem="save" id="tRh-2q-Le0">
                                         <connections>
@@ -153,6 +159,16 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLI-3c-ROj">
+                                <rect key="frame" x="0.0" y="325" width="320" height="199"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krU-Mc-Bwk">
+                                        <rect key="frame" x="9" y="9" width="128" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -165,8 +181,10 @@
                             <constraint firstItem="Wks-PH-HVb" firstAttribute="leading" secondItem="S6c-MJ-44h" secondAttribute="leading" id="E7G-oJ-vB2"/>
                             <constraint firstItem="Wks-PH-HVb" firstAttribute="top" secondItem="GKM-He-tQ8" secondAttribute="bottom" constant="-2" id="EvR-eY-cJn"/>
                             <constraint firstAttribute="bottom" secondItem="emS-CR-AS6" secondAttribute="bottom" id="KpN-WD-6gh"/>
+                            <constraint firstItem="MLI-3c-ROj" firstAttribute="leading" secondItem="emS-CR-AS6" secondAttribute="leading" id="NsQ-Cf-MOp"/>
                             <constraint firstItem="tjL-jc-LLH" firstAttribute="top" secondItem="S6c-MJ-44h" secondAttribute="top" constant="13" id="OE7-zx-had"/>
                             <constraint firstItem="agh-cn-at4" firstAttribute="trailing" secondItem="ONP-XL-yzv" secondAttribute="trailing" id="OUE-af-9px"/>
+                            <constraint firstItem="MLI-3c-ROj" firstAttribute="top" secondItem="ONP-XL-yzv" secondAttribute="bottom" id="Ogp-mR-0qc"/>
                             <constraint firstItem="hal-v0-F3Z" firstAttribute="leading" secondItem="S6c-MJ-44h" secondAttribute="leading" constant="17" id="SeO-WA-ag1"/>
                             <constraint firstItem="GKM-He-tQ8" firstAttribute="leading" secondItem="S6c-MJ-44h" secondAttribute="leading" constant="14" id="Six-w1-j3s"/>
                             <constraint firstItem="agh-cn-at4" firstAttribute="top" secondItem="FBS-d0-wR3" secondAttribute="bottom" constant="39" id="VOI-7R-ghx"/>
@@ -177,6 +195,8 @@
                             <constraint firstItem="emS-CR-AS6" firstAttribute="trailing" secondItem="Wks-PH-HVb" secondAttribute="trailing" id="eiZ-cS-MCz"/>
                             <constraint firstItem="Wks-PH-HVb" firstAttribute="centerX" secondItem="ONP-XL-yzv" secondAttribute="centerX" id="g4e-Xv-87I"/>
                             <constraint firstItem="emS-CR-AS6" firstAttribute="leading" secondItem="Wks-PH-HVb" secondAttribute="leading" id="n8i-4S-dAd"/>
+                            <constraint firstItem="MLI-3c-ROj" firstAttribute="bottom" secondItem="emS-CR-AS6" secondAttribute="top" id="qH1-MT-8oe"/>
+                            <constraint firstItem="MLI-3c-ROj" firstAttribute="trailing" secondItem="emS-CR-AS6" secondAttribute="trailing" id="ryf-Dy-HeK"/>
                             <constraint firstItem="hal-v0-F3Z" firstAttribute="top" secondItem="FBS-d0-wR3" secondAttribute="bottom" constant="13" id="uLL-eq-D6o"/>
                         </constraints>
                     </view>
