@@ -27,7 +27,6 @@
     [RFKeyboardToolbar addToTextView:tv_taskDescription withButtons:@[exampleButton]];
     
     [self.view addSubview:tv_taskDescription];
-    // Add the textview and enjoy!
     
 }
 

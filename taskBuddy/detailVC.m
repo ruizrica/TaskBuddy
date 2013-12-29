@@ -7,32 +7,36 @@
 //
 
 #import "detailVC.h"
+#import "RFKeyboardToolbar/RFKeyboardToolbar.h"
 
 @interface detailVC ()
 
 @end
 
 @implementation detailVC
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize label_dueDate, label_taskName, textView_description, taskData;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	label_taskName.text = taskData.taskName;
+    textView_description.text = taskData.taskDescription;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/YY '@' h:mma"];
+    
+    NSString *dateString = [dateFormatter stringFromDate:taskData.taskDueDate];
+    
+    NSString *dueDateString = [NSString stringWithFormat:@"Due: %@", dateString];
+    
+    label_dueDate.text =  dueDateString;
+    
+    RFToolbarButton *exampleButton = [RFToolbarButton new];
+    
+    [RFKeyboardToolbar addToTextView:textView_description withButtons:@[exampleButton]];
+    
+    [self.view addSubview:textView_description];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

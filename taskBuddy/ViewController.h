@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *menuTableView;
+- (IBAction)clearBadges:(id)sender;
 
 
 @end

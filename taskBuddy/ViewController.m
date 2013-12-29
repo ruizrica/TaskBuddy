@@ -148,4 +148,14 @@
  
  */
 
+- (IBAction)clearBadges:(id)sender {
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"TaskBuddy" message:@"Notification Badges Cleared" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+    
+    [alert show];
+    
+    
+}
 @end

@@ -23,6 +23,7 @@
 {
     [super viewDidLoad];
 	self.title = @"Task List";
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 #pragma mark - Table view data source
@@ -80,7 +81,7 @@
     return cell;
     
 }
-
+/*
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     detailVC *DetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailVC"];
@@ -88,7 +89,7 @@
     
     NSLog(@"Navigate to DetailVC");
 }
-
+*/
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,17 +116,19 @@
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
         
-        //[self loadObjects];
         
     } else {
         
+        //Remove object from Tableview
         PFObject *object = [self.objects objectAtIndex:deleteIndexPath.row];
         [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+            
+            //Reload Table Data
+            [self loadObjects];
         }];
-        [self loadObjects];
-        
-        
+
     }
+
     
 }
 
@@ -149,18 +152,26 @@
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSLog(@"In 'prepareForSegue'");
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"taskSegue"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        detailVC *dvc = segue.destinationViewController;
+        
+        PFObject *object = [self.objects objectAtIndex:indexPath.row];
+        
+        taskModel *_taskData = [[taskModel alloc]init];
+        
+        _taskData.taskName = [object objectForKey:@"taskName"];
+         _taskData.taskDueDate = [object objectForKey:@"taskDueDate"];
+        _taskData.taskDescription = [object objectForKey:@"taskDescription"];
     
-    //NSIndexPath *indexpath = [self.tableView indexPathForSelectedRow];
-    
-    //vegiVC *vegieDetail = segue.destinationViewController;
-    
-    //PFObject *object = [self.objects objectAtIndex:indexpath.row];
-    
-    //vegieDetail.nameSegue = [object objectForKey:@"bbqName"];
+        dvc.taskData = _taskData;
+        
+    }
 }
+
 
 
 @end

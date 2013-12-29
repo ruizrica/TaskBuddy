@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "taskModel.h"
 
 @interface detailVC : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *label_taskName;
+@property (strong, nonatomic) IBOutlet UILabel *label_dueDate;
+@property (strong, nonatomic) IBOutlet UITextView *textView_description;
+
+@property (strong, nonatomic) taskModel *taskData;
 
 @end
