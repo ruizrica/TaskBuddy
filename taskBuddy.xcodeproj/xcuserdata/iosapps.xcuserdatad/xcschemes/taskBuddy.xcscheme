@@ -17,7 +17,7 @@
                BlueprintIdentifier = "EBE2AE3D18583660008E70EA"
                BuildableName = "taskBuddy.app"
                BlueprintName = "taskBuddy"
-               ReferencedContainer = "container:taskBuddy.xcodeproj">
+               ReferencedContainer = "container:taskbuddy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "EBE2AE5E18583660008E70EA"
                BuildableName = "taskBuddyTests.xctest"
                BlueprintName = "taskBuddyTests"
-               ReferencedContainer = "container:taskBuddy.xcodeproj">
+               ReferencedContainer = "container:taskbuddy.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "EBE2AE3D18583660008E70EA"
             BuildableName = "taskBuddy.app"
             BlueprintName = "taskBuddy"
-            ReferencedContainer = "container:taskBuddy.xcodeproj">
+            ReferencedContainer = "container:taskbuddy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "EBE2AE3D18583660008E70EA"
             BuildableName = "taskBuddy.app"
             BlueprintName = "taskBuddy"
-            ReferencedContainer = "container:taskBuddy.xcodeproj">
+            ReferencedContainer = "container:taskbuddy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "EBE2AE3D18583660008E70EA"
             BuildableName = "taskBuddy.app"
             BlueprintName = "taskBuddy"
-            ReferencedContainer = "container:taskBuddy.xcodeproj">
+            ReferencedContainer = "container:taskbuddy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

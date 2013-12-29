@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller - TaskBuddy 1.0-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController storyboardIdentifier="mainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -51,26 +51,16 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="RyC-qk-vO9"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="rzj-ef-QpU">
-                                <rect key="frame" x="0.0" y="401" width="320" height="167"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="167" id="kfN-aO-YXP"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="rzj-ef-QpU" secondAttribute="bottom" id="B5h-1G-4ik"/>
-                            <constraint firstItem="rzj-ef-QpU" firstAttribute="trailing" secondItem="ZYw-oQ-fyV" secondAttribute="trailing" id="Pl0-26-zat"/>
                             <constraint firstItem="zVH-Jr-UyO" firstAttribute="top" secondItem="ZYw-oQ-fyV" secondAttribute="bottom" constant="333" id="SPJ-Bv-a5r"/>
                             <constraint firstAttribute="trailing" secondItem="ZYw-oQ-fyV" secondAttribute="trailing" id="dvu-sr-vJU"/>
                             <constraint firstItem="ZYw-oQ-fyV" firstAttribute="top" secondItem="dZr-xG-0e0" secondAttribute="bottom" constant="-64" id="h2L-en-NtW"/>
-                            <constraint firstItem="rzj-ef-QpU" firstAttribute="leading" secondItem="ZYw-oQ-fyV" secondAttribute="leading" id="xxx-Uj-IEW"/>
                             <constraint firstItem="ZYw-oQ-fyV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="y9w-gK-oR3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TaskBuddy 1.0" id="Wcb-5p-9ju"/>
+                    <navigationItem key="navigationItem" id="Wcb-5p-9ju"/>
                     <connections>
                         <outlet property="menuTableView" destination="ZYw-oQ-fyV" id="hXS-P0-mAu"/>
                     </connections>
@@ -111,6 +101,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NLm-sK-z5h" id="ht5-Eg-djB"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Due Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agh-cn-at4">
                                 <rect key="frame" x="18" y="59" width="288" height="28"/>
@@ -197,22 +190,42 @@
             </objects>
             <point key="canvasLocation" x="723" y="803"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Task ListVC-->
         <scene sceneID="yy2-H5-Xaa">
             <objects>
-                <tableViewController storyboardIdentifier="taskList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T2D-oM-5vf" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cvN-fo-iiK">
+                <tableViewController storyboardIdentifier="taskList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T2D-oM-5vf" customClass="taskListVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" id="cvN-fo-iiK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Dgo-lI-boF">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskListCell" rowHeight="76" id="Dgo-lI-boF" customClass="taskListCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dgo-lI-boF" id="p2b-8x-UgY">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="taskName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7t-iU-AVw">
+                                            <rect key="frame" x="20" y="10" width="280" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="taskName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtR-oy-Ebt">
+                                            <rect key="frame" x="20" y="45" width="237" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dueDateLabel" destination="FtR-oy-Ebt" id="IV9-Wg-Ato"/>
+                                    <outlet property="taskNameLabel" destination="O7t-iU-AVw" id="aSg-uL-t2h"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -224,6 +237,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEv-cP-k7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="723" y="86"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="PA8-6j-DqN">
+            <objects>
+                <viewController storyboardIdentifier="detailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="20Z-xJ-0GP" customClass="detailVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QG1-La-MdB"/>
+                        <viewControllerLayoutGuide type="bottom" id="RoX-2K-Dkp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vvz-4e-6Gk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail View Controller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc3-K6-ymJ">
+                                <rect key="frame" x="20" y="70" width="280" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgH-bK-yHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103" y="85"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KyP-L8-FQ5">
@@ -245,7 +285,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background.png" width="320" height="167"/>
         <image name="tb_formBack.png" width="320" height="233"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

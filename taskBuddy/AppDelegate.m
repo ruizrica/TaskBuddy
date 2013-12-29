@@ -23,7 +23,7 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x1774a5)];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x333333)];
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     

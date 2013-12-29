@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "createVC.h"
-#import "listVC.h"
+#import "taskListVC.h"
 #import "menuCell.h"
 
 @interface ViewController () {
@@ -29,6 +29,8 @@
     menuItems = @[@"Create Task",@"Task List",@"Set Reminder"];
     
     menuImages = @[@"menu_icon1.png", @"menu_icon2.png", @"menu_icon3.png"];
+    
+    self.title = @"TaskBuddy v1.2";
     
 }
 #pragma mark - Table view data source
@@ -73,7 +75,7 @@
                 break;
                 // List Tasks
             case 1:{
-                listVC *listVC_object = [self.storyboard instantiateViewControllerWithIdentifier:@"taskList"];
+                taskListVC *listVC_object = [self.storyboard instantiateViewControllerWithIdentifier:@"taskList"];
                 [self.navigationController pushViewController:listVC_object animated:YES];
             }
                 break;
@@ -93,6 +95,7 @@
         }
         
     }
+
 
 /*
  // Override to support conditional editing of the table view.

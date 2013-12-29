@@ -52,9 +52,13 @@ static UITextField *textField = NULL;
 }
 
 - (NSString*)titleForButton {
-    return nil;
+    return @"Done";
 }
 
--(void)buttonTarget {}
+-(void)buttonTarget {
+    
+     [[RFToolbarButton textView] resignFirstResponder];
+
+}
 
 @end

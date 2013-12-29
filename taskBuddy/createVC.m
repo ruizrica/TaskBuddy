@@ -22,31 +22,13 @@
     tv_taskDescription.placeholder = @"Description";
     [tf_taskName becomeFirstResponder];
     
-}
-
-- (void)textViewDidBeginEditing:(UITextView *)textView {
-    
-    /*RFToolbarButton *exampleButton = [RFToolbarButton new];
-    // This is a RFToolbarButton subclass - you set the button title and the button's target in this subclass
-    // You then import the subclass, and then alloc and init it with new
-    
-    tv_taskDescription = [[UITextView alloc] initWithFrame:self.view.bounds];
-    // The underscore is to access the UITextView variable set in the @interface (you can see this in the demo)
+    RFToolbarButton *exampleButton = [RFToolbarButton new];
     
     [RFKeyboardToolbar addToTextView:tv_taskDescription withButtons:@[exampleButton]];
-    // Here's where the new magic happens (previously you could use UITextInput, and not have to worry about adding it for a UITextView/UIToolbar)**
-    // The array is the arry of buttons you created and have "newed" above.  They will appear in the order you
-    // add them from left to right.  You can access the textfield/view in the button subclasses to insert text
-    // or do whatever you want via [RFToolbarButton textInput].  But you can see this in the example as well.
     
-    // ** while working on RFMarkdownTextView, I realized that UITextInput is much less documented, and this isn't that much different, so I went with this.
+    [self.view addSubview:tv_taskDescription];
+    // Add the textview and enjoy!
     
-    [self.view addSubview:tv_taskDescription];*/
-    
-    
-    NSLog(@"user started editing");
-    
-
 }
 
 
@@ -120,6 +102,12 @@
         
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [self dismissKeyboardAction];
+    return YES;
 }
 
 - (IBAction)dismissKeyboard:(id)sender {

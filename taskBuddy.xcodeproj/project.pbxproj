@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB18D24B18594A4F00518F7F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB18D24A18594A4F00518F7F /* Parse.framework */; };
+		8C17E892186FC9BA00EDBD12 /* parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C17E891186FC9BA00EDBD12 /* parse.framework */; };
+		EB242F3A186F5481002A6DF7 /* detailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB242F39186F5481002A6DF7 /* detailVC.m */; };
 		EB4BF076186118A60037A02D /* RMDateSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4BF06B186118A60037A02D /* RMDateSelectionViewController.xib */; };
 		EB4BF077186118A60037A02D /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4BF071186118A60037A02D /* RMDateSelectionViewController.m */; };
 		EB4BF09918612A650037A02D /* GCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4BF08E18612A650037A02D /* GCPlaceholderTextView.m */; };
 		EB4BF0A0186130070037A02D /* tb_formBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4BF09F186130070037A02D /* tb_formBack@2x.png */; };
 		EB4BF0A2186130370037A02D /* tb_formBack.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4BF0A1186130370037A02D /* tb_formBack.png */; };
-		EB50E0DC18590EDF00ECA2F3 /* listVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB50E0DB18590EDF00ECA2F3 /* listVC.m */; };
 		EB6EA3D718642A2B00FAEBB5 /* RFKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3D418642A2B00FAEBB5 /* RFKeyboardToolbar.m */; };
 		EB6EA3D818642A2B00FAEBB5 /* RFToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */; };
 		EB6EA3DB1867EB3900FAEBB5 /* menuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3DA1867EB3900FAEBB5 /* menuCell.m */; };
@@ -29,6 +29,8 @@
 		EB95A746186168C7008BBF93 /* location-512.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A73E186168C7008BBF93 /* location-512.png */; };
 		EB95A747186168C7008BBF93 /* location-75.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A73F186168C7008BBF93 /* location-75.png */; };
 		EBB721A218684F2200B0E2A1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB721A118684F2200B0E2A1 /* background.png */; };
+		EBB721A51868ED5500B0E2A1 /* taskListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB721A41868ED5500B0E2A1 /* taskListVC.m */; };
+		EBB721A81868EEB700B0E2A1 /* taskListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB721A71868EEB700B0E2A1 /* taskListCell.m */; };
 		EBE2AE4218583660008E70EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE2AE4118583660008E70EA /* Foundation.framework */; };
 		EBE2AE4418583660008E70EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE2AE4318583660008E70EA /* CoreGraphics.framework */; };
 		EBE2AE4618583660008E70EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE2AE4518583660008E70EA /* UIKit.framework */; };
@@ -67,7 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB18D24A18594A4F00518F7F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		8C17E891186FC9BA00EDBD12 /* parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = parse.framework; sourceTree = "<group>"; };
+		EB242F38186F5481002A6DF7 /* detailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailVC.h; sourceTree = "<group>"; };
+		EB242F39186F5481002A6DF7 /* detailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailVC.m; sourceTree = "<group>"; };
 		EB4BF06C186118A60037A02D /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/RMDateSelectionViewController.xib; sourceTree = "<group>"; };
 		EB4BF06D186118A60037A02D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RMDateSelectionViewController.xib; sourceTree = "<group>"; };
 		EB4BF06E186118A60037A02D /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/RMDateSelectionViewController.xib; sourceTree = "<group>"; };
@@ -82,8 +86,6 @@
 		EB4BF08E18612A650037A02D /* GCPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPlaceholderTextView.m; sourceTree = "<group>"; };
 		EB4BF09F186130070037A02D /* tb_formBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb_formBack@2x.png"; sourceTree = "<group>"; };
 		EB4BF0A1186130370037A02D /* tb_formBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tb_formBack.png; sourceTree = "<group>"; };
-		EB50E0DA18590EDF00ECA2F3 /* listVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = listVC.h; sourceTree = "<group>"; };
-		EB50E0DB18590EDF00ECA2F3 /* listVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = listVC.m; sourceTree = "<group>"; };
 		EB6EA3D318642A2B00FAEBB5 /* RFKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFKeyboardToolbar.h; sourceTree = "<group>"; };
 		EB6EA3D418642A2B00FAEBB5 /* RFKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFKeyboardToolbar.m; sourceTree = "<group>"; };
 		EB6EA3D518642A2B00FAEBB5 /* RFToolbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFToolbarButton.h; sourceTree = "<group>"; };
@@ -102,6 +104,10 @@
 		EB95A73E186168C7008BBF93 /* location-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-512.png"; sourceTree = "<group>"; };
 		EB95A73F186168C7008BBF93 /* location-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-75.png"; sourceTree = "<group>"; };
 		EBB721A118684F2200B0E2A1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		EBB721A31868ED5500B0E2A1 /* taskListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = taskListVC.h; sourceTree = "<group>"; };
+		EBB721A41868ED5500B0E2A1 /* taskListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = taskListVC.m; sourceTree = "<group>"; };
+		EBB721A61868EEB700B0E2A1 /* taskListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = taskListCell.h; sourceTree = "<group>"; };
+		EBB721A71868EEB700B0E2A1 /* taskListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = taskListCell.m; sourceTree = "<group>"; };
 		EBE2AE3E18583660008E70EA /* taskBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE2AE4118583660008E70EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBE2AE4318583660008E70EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,9 +153,9 @@
 				EBE2AE8D18584093008E70EA /* QuartzCore.framework in Frameworks */,
 				EBE2AE8B18584088008E70EA /* MobileCoreServices.framework in Frameworks */,
 				EBE2AE891858407A008E70EA /* libz.1.1.3.dylib in Frameworks */,
-				EB18D24B18594A4F00518F7F /* Parse.framework in Frameworks */,
 				EBE2AE8718584049008E70EA /* CoreLocation.framework in Frameworks */,
 				EBE2AE4418583660008E70EA /* CoreGraphics.framework in Frameworks */,
+				8C17E892186FC9BA00EDBD12 /* parse.framework in Frameworks */,
 				EBE2AE8518584031008E70EA /* CFNetwork.framework in Frameworks */,
 				EBE2AE8318584025008E70EA /* AudioToolbox.framework in Frameworks */,
 				EBE2AE4618583660008E70EA /* UIKit.framework in Frameworks */,
@@ -170,6 +176,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB242F37186F542E002A6DF7 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				EB242F38186F5481002A6DF7 /* detailVC.h */,
+				EB242F39186F5481002A6DF7 /* detailVC.m */,
+			);
+			name = DetailVC;
+			sourceTree = "<group>";
+		};
+		EB242F3B186F55BC002A6DF7 /* ListVC_Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EBB721A61868EEB700B0E2A1 /* taskListCell.h */,
+				EBB721A71868EEB700B0E2A1 /* taskListCell.m */,
+			);
+			name = ListVC_Cell;
+			sourceTree = "<group>";
+		};
 		EB4BF066186111880037A02D /* CustomClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,7 +294,7 @@
 		EBE2AE4018583660008E70EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB18D24A18594A4F00518F7F /* Parse.framework */,
+				8C17E891186FC9BA00EDBD12 /* parse.framework */,
 				EBE2AE92185840BA008E70EA /* SystemConfiguration.framework */,
 				EBE2AE90185840AA008E70EA /* StoreKit.framework */,
 				EBE2AE8E1858409D008E70EA /* Security.framework */,
@@ -297,6 +321,7 @@
 				EBE2AE77185837AA008E70EA /* MainVC */,
 				EBE2AE78185837B3008E70EA /* CreateVC */,
 				EBE2AE79185837C4008E70EA /* ListVC */,
+				EB242F37186F542E002A6DF7 /* DetailVC */,
 				EB4BF0A3186130450037A02D /* Image Assets */,
 				EB4BF066186111880037A02D /* CustomClasses */,
 				EBE2AE5918583660008E70EA /* Images.xcassets */,
@@ -366,8 +391,9 @@
 		EBE2AE79185837C4008E70EA /* ListVC */ = {
 			isa = PBXGroup;
 			children = (
-				EB50E0DA18590EDF00ECA2F3 /* listVC.h */,
-				EB50E0DB18590EDF00ECA2F3 /* listVC.m */,
+				EBB721A31868ED5500B0E2A1 /* taskListVC.h */,
+				EBB721A41868ED5500B0E2A1 /* taskListVC.m */,
+				EB242F3B186F55BC002A6DF7 /* ListVC_Cell */,
 			);
 			name = ListVC;
 			sourceTree = "<group>";
@@ -433,7 +459,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EBE2AE391858365F008E70EA /* Build configuration list for PBXProject "taskBuddy" */;
+			buildConfigurationList = EBE2AE391858365F008E70EA /* Build configuration list for PBXProject "taskbuddy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -502,15 +528,17 @@
 			files = (
 				EB4BF09918612A650037A02D /* GCPlaceholderTextView.m in Sources */,
 				EB4BF077186118A60037A02D /* RMDateSelectionViewController.m in Sources */,
+				EB242F3A186F5481002A6DF7 /* detailVC.m in Sources */,
 				EBE2AE97185842E8008E70EA /* taskModel.m in Sources */,
 				EB6EA3D818642A2B00FAEBB5 /* RFToolbarButton.m in Sources */,
+				EBB721A81868EEB700B0E2A1 /* taskListCell.m in Sources */,
 				EB6EA3D718642A2B00FAEBB5 /* RFKeyboardToolbar.m in Sources */,
 				EBE2AE7F18583802008E70EA /* createVC.m in Sources */,
-				EB50E0DC18590EDF00ECA2F3 /* listVC.m in Sources */,
 				EBE2AE5818583660008E70EA /* ViewController.m in Sources */,
 				EBE2AE5218583660008E70EA /* AppDelegate.m in Sources */,
 				EB6EA3DB1867EB3900FAEBB5 /* menuCell.m in Sources */,
 				EBE2AE4E18583660008E70EA /* main.m in Sources */,
+				EBB721A51868ED5500B0E2A1 /* taskListVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +684,7 @@
 					"$(inherited)",
 					/Users/iosapps/Desktop/taskBuddy,
 					"/Users/iosapps/Dropbox/iOS\\ Projects/taskBuddy",
+					/Users/ricardo/Desktop/taskBuddy,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "taskBuddy/taskBuddy-Prefix.pch";
@@ -674,6 +703,7 @@
 					"$(inherited)",
 					/Users/iosapps/Desktop/taskBuddy,
 					"/Users/iosapps/Dropbox/iOS\\ Projects/taskBuddy",
+					/Users/ricardo/Desktop/taskBuddy,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "taskBuddy/taskBuddy-Prefix.pch";
@@ -728,7 +758,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EBE2AE391858365F008E70EA /* Build configuration list for PBXProject "taskBuddy" */ = {
+		EBE2AE391858365F008E70EA /* Build configuration list for PBXProject "taskbuddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBE2AE6E18583660008E70EA /* Debug */,
