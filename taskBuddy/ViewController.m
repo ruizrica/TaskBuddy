@@ -26,9 +26,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib
     
-    menuItems = @[@"Create Task",@"Task List",@"Set Reminder"];
+    menuItems = @[@"Create Task",@"Task List"];
     
-    menuImages = @[@"menu_icon1.png", @"menu_icon2.png", @"menu_icon3.png"];
+    menuImages = @[@"menu_icon1.png", @"menu_icon2.png"];
     
     self.title = @"TaskBuddy v1.2";
     
@@ -77,16 +77,6 @@
             case 1:{
                 taskListVC *listVC_object = [self.storyboard instantiateViewControllerWithIdentifier:@"taskList"];
                 [self.navigationController pushViewController:listVC_object animated:YES];
-            }
-                break;
-                
-                // Set Reminder
-            case 2:{
-                
-                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Feature Not Available" message:@"Developer Preview: \nFeature Not Available" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
-                
-                [alert show];
-                
             }
                 break;
                 

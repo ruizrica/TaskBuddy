@@ -7,13 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "RMDateSelectionViewController.h"
 #import "taskModel.h"
 
-@interface detailVC : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *label_taskName;
-@property (strong, nonatomic) IBOutlet UILabel *label_dueDate;
-@property (strong, nonatomic) IBOutlet UITextView *textView_description;
+@interface detailVC : UIViewController<RMDateSelectionViewControllerDelegate> {
+    NSDate *local_taskDueDate;
+}
+@property (strong, nonatomic) IBOutlet UITextField *tf_taskName;
+@property (strong, nonatomic) IBOutlet UITextField *tf_dueDate;
+@property (strong, nonatomic) IBOutlet UITextView *tv_description;
+@property (strong, nonatomic) NSString *objectID;
 
 @property (strong, nonatomic) taskModel *taskData;
+
+- (IBAction)selectDueDate:(id)sender;
 
 @end

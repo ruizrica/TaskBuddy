@@ -12,9 +12,10 @@
 @property (nonatomic,strong) NSString *taskName;
 @property (nonatomic,strong) NSString *taskDescription;
 @property (nonatomic,strong) NSString *taskRequestedBy;
+@property (nonatomic,strong) NSString *taskObjectId;
 @property (nonatomic,strong) UIImage *taskImage;
-@property (nonatomic,strong) NSDate * taskDueDate;
-@property (nonatomic,strong) NSDate * taskCreatedDate;
+@property (nonatomic,strong) NSDate *taskDueDate;
+@property (nonatomic,strong) NSDate *taskCreatedDate;
 @property (nonatomic) BOOL taskStatus;
 @property (nonatomic) BOOL taskPriority;
 @property (nonatomic) float userLocLat;

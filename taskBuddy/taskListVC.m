@@ -64,8 +64,11 @@
     static NSString *cellID = @"taskListCell";
     
     taskListCell *cell = (taskListCell *)[tableView dequeueReusableCellWithIdentifier:cellID];
+    
     if (cell == nil) {
-        cell = [[taskListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+                cell = [[taskListCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:cellID
+                                  ];
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -81,6 +84,7 @@
     return cell;
     
 }
+
 /*
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -121,7 +125,9 @@
         
         //Remove object from Tableview
         PFObject *object = [self.objects objectAtIndex:deleteIndexPath.row];
+        
         [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+          //  [self deleteRowsAtIndexPaths:@[deleteIndexPath.row] withRowAnimation:UITableViewRowAnimationLeft];
             
             //Reload Table Data
             [self loadObjects];
@@ -161,11 +167,17 @@
         
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
         
+        NSString *objectID = [object objectId];
+        
+        NSLog(@"Selected Object ID: %@", objectID);
+        
         taskModel *_taskData = [[taskModel alloc]init];
         
         _taskData.taskName = [object objectForKey:@"taskName"];
          _taskData.taskDueDate = [object objectForKey:@"taskDueDate"];
         _taskData.taskDescription = [object objectForKey:@"taskDescription"];
+        
+        _taskData.taskObjectId = objectID;
     
         dvc.taskData = _taskData;
         
