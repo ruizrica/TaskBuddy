@@ -13,6 +13,7 @@
 
 @interface taskListVC () {
     NSIndexPath *deleteIndexPath;
+    NSString *local_createdDate;
 }
 
 @end
@@ -26,6 +27,11 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    //Reload Table Data
+    [self loadObjects];
+}
+
 #pragma mark - Table view data source
 
 -(id)initWithCoder:(NSCoder *)aCoder {
@@ -35,7 +41,6 @@
         
         //Set Class Name
         self.parseClassName = @"task";
-        
         
         //Pull to Refresh
         self.pullToRefreshEnabled = YES;
@@ -66,17 +71,13 @@
     taskListCell *cell = (taskListCell *)[tableView dequeueReusableCellWithIdentifier:cellID];
     
     if (cell == nil) {
-                cell = [[taskListCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:cellID
-                                  ];
+        cell = [[taskListCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/YY '@' h:mma"];
-    
-    NSString *dateString = [dateFormatter stringFromDate:[object objectForKey:@"taskDueDate"]];
-    
-    NSString *dueDateString = [NSString stringWithFormat:@"Due: %@", dateString];
+    NSString *_dueDateString = [dateFormatter stringFromDate:[object objectForKey:@"taskDueDate"]];
+    NSString *dueDateString = [NSString stringWithFormat:@"Due: %@", _dueDateString];
     
     cell.taskNameLabel.text = [object objectForKey:@"taskName"];
     cell.dueDateLabel.text = dueDateString;
@@ -174,11 +175,11 @@
         taskModel *_taskData = [[taskModel alloc]init];
         
         _taskData.taskName = [object objectForKey:@"taskName"];
-         _taskData.taskDueDate = [object objectForKey:@"taskDueDate"];
+        _taskData.taskDueDate = [object objectForKey:@"taskDueDate"];
         _taskData.taskDescription = [object objectForKey:@"taskDescription"];
-        
+        _taskData.taskCreatedDate = object.createdAt;
         _taskData.taskObjectId = objectID;
-    
+        
         dvc.taskData = _taskData;
         
     }

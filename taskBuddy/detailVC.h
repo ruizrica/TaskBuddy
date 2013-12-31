@@ -16,6 +16,7 @@
 }
 @property (strong, nonatomic) IBOutlet UITextField *tf_taskName;
 @property (strong, nonatomic) IBOutlet UITextField *tf_dueDate;
+@property (strong, nonatomic) IBOutlet UITextField *tf_createdDate;
 @property (strong, nonatomic) IBOutlet UITextView *tv_description;
 @property (strong, nonatomic) NSString *objectID;
 

@@ -9,12 +9,14 @@
 #import "detailVC.h"
 #import "RFKeyboardToolbar/RFKeyboardToolbar.h"
 
-@interface detailVC ()
+@interface detailVC () {
+    NSDate *local_createdDate;
+}
 
 @end
 
 @implementation detailVC
-@synthesize tf_dueDate, tf_taskName, tv_description, taskData, objectID;
+@synthesize tf_dueDate, tf_taskName, tv_description, taskData, objectID, tf_createdDate;
 
 - (void)viewDidLoad
 {
@@ -24,28 +26,30 @@
     
     self.title = @"Edit Task";
     
-    
-    
-	tf_taskName.text = taskData.taskName;
-    tv_description.text = taskData.taskDescription;
     objectID = taskData.taskObjectId;
     
+    //Due Date
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/YY '@' h:mma"];
+    NSString *_dueDate = [dateFormatter stringFromDate:taskData.taskDueDate];
+    NSString *dueDate = [NSString stringWithFormat:@"Due: %@", _dueDate];
     
-    NSString *dateString = [dateFormatter stringFromDate:taskData.taskDueDate];
+    //Created Date
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    [dateFormatter2 setDateFormat:@"MM/dd/YY"];
+    NSString *_createdDate = [dateFormatter stringFromDate:taskData.taskCreatedDate];
+    NSString *createdDate = [NSString stringWithFormat:@"Created: %@", _createdDate];
     
-    NSString *dueDateString = [NSString stringWithFormat:@"Due: %@", dateString];
-    
-    tf_dueDate.text =  dueDateString;
+    tf_taskName.text = taskData.taskName;
+    tv_description.text = taskData.taskDescription;
+    tf_dueDate.text =  dueDate;
+    tf_createdDate.text = createdDate;
     
     RFToolbarButton *exampleButton = [RFToolbarButton new];
     
     [RFKeyboardToolbar addToTextView:tv_description withButtons:@[exampleButton]];
     
     [self.view addSubview:tv_description];
-    
-    NSLog(objectID);
 }
 
 
@@ -79,7 +83,7 @@
 - (IBAction)updateTask:(id)sender {
     //taskModel *taskData = [[taskModel alloc]init];
     
-    NSLog(objectID);
+    NSLog(@"%@",objectID);
     
     taskData.taskName = tf_taskName.text;
     taskData.taskDueDate = local_taskDueDate;
@@ -90,19 +94,12 @@
     // Retrieve the object by id
     [query getObjectInBackgroundWithId:objectID block:^(PFObject *_taskData, NSError *error) {
         
-        // Now let's update it with some new data. In this case, only cheatMode and score
-        // will get sent to the cloud. playerName hasn't changed.
         _taskData[@"taskStatus"] = @NO;
         _taskData[@"taskDescription"] = taskData.taskDescription;
         [_taskData saveInBackground];
         
     }];
     
-    /*PFObject *taskObject = [PFObject objectWithClassName:@"task"];
-    [taskObject setObject:taskData.taskName forKey:@"taskName"];
-    [taskObject setObject:taskData.taskDueDate forKey:@"taskDueDate"];
-    [taskObject setObject:taskData.taskDescription forKey:@"taskDescription"];
-    [taskObject saveInBackground];*/
     
     // Schedule the notification
     /*UILocalNotification* localNotification = [[UILocalNotification alloc] init];
