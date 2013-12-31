@@ -19,7 +19,7 @@
 @end
 
 @implementation ViewController
-@synthesize menuTableView;
+//@synthesize menuTableView;
 
 - (void)viewDidLoad
 {
@@ -33,6 +33,7 @@
     self.title = @"TaskBuddy v1.2";
     
 }
+/*
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -86,7 +87,7 @@
         
     }
 
-
+*/
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -147,5 +148,16 @@
     [alert show];
     
     
+}
+- (IBAction)createTaskButton:(id)sender {
+    
+    createVC *createVC_object = [self.storyboard instantiateViewControllerWithIdentifier:@"createTask"];
+    [self.navigationController pushViewController:createVC_object animated:YES];
+}
+
+- (IBAction)taskListButton:(id)sender {
+    
+    taskListVC *listVC_object = [self.storyboard instantiateViewControllerWithIdentifier:@"taskList"];
+    [self.navigationController pushViewController:listVC_object animated:YES];
 }
 @end

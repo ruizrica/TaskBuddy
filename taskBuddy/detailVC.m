@@ -8,6 +8,7 @@
 
 #import "detailVC.h"
 #import "RFKeyboardToolbar/RFKeyboardToolbar.h"
+#import "importantButton.h"
 
 @interface detailVC () {
     NSDate *local_createdDate;
@@ -16,7 +17,7 @@
 @end
 
 @implementation detailVC
-@synthesize tf_dueDate, tf_taskName, tv_description, taskData, objectID, tf_createdDate;
+@synthesize tf_dueDate, tf_taskName, tv_description, taskData, objectID, tf_createdDate, tf_modifiedDate;
 
 - (void)viewDidLoad
 {
@@ -35,19 +36,24 @@
     NSString *dueDate = [NSString stringWithFormat:@"Due: %@", _dueDate];
     
     //Created Date
-    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
-    [dateFormatter2 setDateFormat:@"MM/dd/YY"];
     NSString *_createdDate = [dateFormatter stringFromDate:taskData.taskCreatedDate];
     NSString *createdDate = [NSString stringWithFormat:@"Created: %@", _createdDate];
+    
+    //Modified Date
+    NSString *_modifiedDate = [dateFormatter stringFromDate:taskData.taskModifiedDate];
+    NSString *modifiedDate = [NSString stringWithFormat:@"Last Update: %@", _modifiedDate];
     
     tf_taskName.text = taskData.taskName;
     tv_description.text = taskData.taskDescription;
     tf_dueDate.text =  dueDate;
     tf_createdDate.text = createdDate;
+    tf_modifiedDate.text = modifiedDate;
     
     RFToolbarButton *exampleButton = [RFToolbarButton new];
     
-    [RFKeyboardToolbar addToTextView:tv_description withButtons:@[exampleButton]];
+    importantButton *_importantButton = [importantButton new];
+    
+    [RFKeyboardToolbar addToTextView:tv_description withButtons:@[exampleButton, _importantButton]];
     
     [self.view addSubview:tv_description];
 }
@@ -83,8 +89,6 @@
 - (IBAction)updateTask:(id)sender {
     //taskModel *taskData = [[taskModel alloc]init];
     
-    NSLog(@"%@",objectID);
-    
     taskData.taskName = tf_taskName.text;
     taskData.taskDueDate = local_taskDueDate;
     taskData.taskDescription = tv_description.text;
@@ -99,6 +103,8 @@
         [_taskData saveInBackground];
         
     }];
+    
+     NSLog(@"Object:%@ Updated",objectID);
     
     
     // Schedule the notification

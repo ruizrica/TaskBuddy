@@ -6,19 +6,9 @@
 //  Copyright (c) 2013 iOS Apps Development. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "RFKeyboardToolbar.h"
+#import "RFToolbarButton.h"
 
+@interface importantButton : RFToolbarButton
 
-@interface importantButton : UIButton
-
--(NSString*)titleForButton;
--(void)buttonTarget;
-
-+ (void)setTextViewForButton:(UITextView*)textViewPassed;
-+ (UITextView*)textView;
-
-+ (void)setTextFieldForButton:(UITextField*)textFieldPassed;
-+ (UITextField*)textField;
 
 @end

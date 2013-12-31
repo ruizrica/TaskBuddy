@@ -9,7 +9,7 @@
 #import "taskModel.h"
 
 @implementation taskModel
-@synthesize taskName, taskDescription, taskImage, taskStatus, taskPriority, taskRequestedBy, userLocLat, userLocLon, taskDueDate, taskCreatedDate, taskObjectId;
+@synthesize taskName, taskDescription, taskImage, taskStatus, taskPriority, taskRequestedBy, userLocLat, userLocLon, taskDueDate, taskCreatedDate, taskObjectId, taskModifiedDate;
 
 - (id)initWithTaskName:(NSString *)theTaskName
        taskDescription:(NSString *)theTaskDescription

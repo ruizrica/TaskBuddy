@@ -6,6 +6,7 @@
 //
 
 #import "RFKeyboardToolbar.h"
+#import "importantButton.h"
 
 @interface RFKeyboardToolbar ()
 
@@ -30,6 +31,7 @@
 
 + (void)addToTextView:(UITextView*)textView withButtons:(NSArray *)buttons {
     [RFToolbarButton setTextViewForButton:textView];
+    
     RFKeyboardToolbar *keyboardToolbar = [[RFKeyboardToolbar alloc] initWithButtons:buttons];
     
     [textView setInputAccessoryView:keyboardToolbar];
@@ -37,6 +39,7 @@
 
 + (void)addToTextField:(UITextField *)textField withButtons:(NSArray *)buttons {
     [RFToolbarButton setTextFieldForButton:textField];
+    
     RFKeyboardToolbar *keyboardToolbar = [[RFKeyboardToolbar alloc] initWithButtons:buttons];
     
     [textField setInputAccessoryView:keyboardToolbar];

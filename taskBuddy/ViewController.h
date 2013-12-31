@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UITextViewDelegate>
-@property (strong, nonatomic) IBOutlet UITableView *menuTableView;
+@interface ViewController : UIViewController</*UITableViewDelegate, UITableViewDataSource, */UITextViewDelegate>
+
+- (IBAction)createTaskButton:(id)sender;
+- (IBAction)taskListButton:(id)sender;
+//@property (strong, nonatomic) IBOutlet UITableView *menuTableView;
 - (IBAction)clearBadges:(id)sender;
 
 

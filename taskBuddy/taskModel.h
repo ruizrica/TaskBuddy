@@ -16,6 +16,7 @@
 @property (nonatomic,strong) UIImage *taskImage;
 @property (nonatomic,strong) NSDate *taskDueDate;
 @property (nonatomic,strong) NSDate *taskCreatedDate;
+@property (nonatomic,strong) NSDate *taskModifiedDate;
 @property (nonatomic) BOOL taskStatus;
 @property (nonatomic) BOOL taskPriority;
 @property (nonatomic) float userLocLat;

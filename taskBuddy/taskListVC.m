@@ -178,6 +178,7 @@
         _taskData.taskDueDate = [object objectForKey:@"taskDueDate"];
         _taskData.taskDescription = [object objectForKey:@"taskDescription"];
         _taskData.taskCreatedDate = object.createdAt;
+        _taskData.taskModifiedDate = object.updatedAt;
         _taskData.taskObjectId = objectID;
         
         dvc.taskData = _taskData;

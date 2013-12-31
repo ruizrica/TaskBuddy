@@ -38,6 +38,8 @@
 		EBAFC83118720193000A28A4 /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAFC82E18720193000A28A4 /* clock@2x.png */; };
 		EBAFC83218720193000A28A4 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAFC82F18720193000A28A4 /* cross@2x.png */; };
 		EBAFC83718727F3D000A28A4 /* importantButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAFC83618727F3D000A28A4 /* importantButton.m */; };
+		EBAFC83A187291CB000A28A4 /* createTask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAFC838187291CB000A28A4 /* createTask@2x.png */; };
+		EBAFC83B187291CB000A28A4 /* taskList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAFC839187291CB000A28A4 /* taskList@2x.png */; };
 		EBB721A218684F2200B0E2A1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB721A118684F2200B0E2A1 /* background.png */; };
 		EBB721A51868ED5500B0E2A1 /* taskListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB721A41868ED5500B0E2A1 /* taskListVC.m */; };
 		EBB721A81868EEB700B0E2A1 /* taskListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB721A71868EEB700B0E2A1 /* taskListCell.m */; };
@@ -132,6 +134,8 @@
 		EBAFC82F18720193000A28A4 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
 		EBAFC83518727F3D000A28A4 /* importantButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = importantButton.h; path = taskbuddy/RFKeyboardToolbar/importantButton.h; sourceTree = SOURCE_ROOT; };
 		EBAFC83618727F3D000A28A4 /* importantButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = importantButton.m; path = taskbuddy/RFKeyboardToolbar/importantButton.m; sourceTree = SOURCE_ROOT; };
+		EBAFC838187291CB000A28A4 /* createTask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "createTask@2x.png"; sourceTree = "<group>"; };
+		EBAFC839187291CB000A28A4 /* taskList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taskList@2x.png"; sourceTree = "<group>"; };
 		EBB721A118684F2200B0E2A1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		EBB721A31868ED5500B0E2A1 /* taskListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = taskListVC.h; sourceTree = "<group>"; };
 		EBB721A41868ED5500B0E2A1 /* taskListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = taskListVC.m; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 		EB4BF0A3186130450037A02D /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EBAFC838187291CB000A28A4 /* createTask@2x.png */,
+				EBAFC839187291CB000A28A4 /* taskList@2x.png */,
 				EBAFC82D18720193000A28A4 /* check@2x.png */,
 				EBAFC82E18720193000A28A4 /* clock@2x.png */,
 				EBAFC82F18720193000A28A4 /* cross@2x.png */,
@@ -566,6 +572,8 @@
 				EB4BF076186118A60037A02D /* RMDateSelectionViewController.xib in Resources */,
 				EB6EA3E618682B9B00FAEBB5 /* menu_icon2.png in Resources */,
 				EB95A745186168C7008BBF93 /* location-50.png in Resources */,
+				EBAFC83B187291CB000A28A4 /* taskList@2x.png in Resources */,
+				EBAFC83A187291CB000A28A4 /* createTask@2x.png in Resources */,
 				EB95A746186168C7008BBF93 /* location-512.png in Resources */,
 				EB95A742186168C7008BBF93 /* location-25.png in Resources */,
 				EB6EA3E818682DB300FAEBB5 /* menu_icon3.png in Resources */,
