@@ -84,7 +84,7 @@
 - (IBAction)button_priority:(id)sender {
     [self dismissKeyboardAction];
     
-    REDActionSheet *actionSheet = [[REDActionSheet alloc] initWithCancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitlesList:@"1", @"2", @"3", nil];
+    REDActionSheet *actionSheet = [[REDActionSheet alloc] initWithCancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitlesList:@"High Priority", @"Normal Priority", @"Low Priority", nil];
 	actionSheet.actionSheetTappedButtonAtIndexBlock = ^(REDActionSheet *actionSheet, NSUInteger buttonIndex) {
 		
         switch (buttonIndex) {
@@ -115,36 +115,11 @@
 }
 
 - (IBAction)button_budget:(id)sender {
-    [self dismissKeyboardAction];
+    //[self dismissKeyboardAction];
     
-    REDActionSheet *actionSheet = [[REDActionSheet alloc] initWithCancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitlesList:@"1", @"2", @"3", nil];
-	actionSheet.actionSheetTappedButtonAtIndexBlock = ^(REDActionSheet *actionSheet, NSUInteger buttonIndex) {
-		
-        switch (buttonIndex) {
-                
-            case 0: {
-                NSLog(@"Case 0");
-            }
-                break;
-                
-            case 1: {
-                NSLog(@"Case 1");
-            }
-                break;
-                
-            case 2: {
-                NSLog(@"Case 2");
-            }
-                break;
-                
-            default:
-                break;
-        }
-        
-        
-        
-	};
-	[actionSheet showInView:self.view];
+    UIAlertView *alert =  [[UIAlertView alloc]initWithTitle:@"Developer Preview" message:@"Feature Not Available" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 

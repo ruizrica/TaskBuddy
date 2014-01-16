@@ -121,8 +121,8 @@
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
-        
-        
+        //Reload Table Data
+        [self loadObjects];
     } else {
         
         //[self.tableView deleteRowsAtIndexPaths:@[deleteIndexPath.row] withRowAnimation:UITableViewRowAnimationLeft];
