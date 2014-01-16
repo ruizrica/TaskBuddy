@@ -10,14 +10,19 @@
 #import "RFKeyboardToolbar/RFKeyboardToolbar.h"
 #import "importantButton.h"
 
-@interface detailVC () {
-    NSDate *local_createdDate;
-}
+#define USERNAME @"Lily Hirahara"
+@import AVFoundation;
+
+@interface detailVC ()
 
 @end
 
 @implementation detailVC
-@synthesize tf_dueDate, tf_taskName, tv_description, taskData, objectID, tf_createdDate, tf_modifiedDate;
+@synthesize tf_dueDate, tf_taskName, tv_description, taskData, objectID, tf_createdDate, tf_modifiedDate, tf_modifiedBy;
+
+//Alternate Queue For Uploading
+dispatch_queue_t parseQueue;
+
 
 - (void)viewDidLoad
 {
@@ -28,6 +33,10 @@
     self.title = @"Edit Task";
     
     objectID = taskData.taskObjectId;
+    
+    NSString *userMessage = [NSString stringWithFormat:@"Modified By: %@", USERNAME];
+    
+    tf_modifiedBy.text = userMessage;
     
     //Due Date
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -45,9 +54,15 @@
     
     tf_taskName.text = taskData.taskName;
     tv_description.text = taskData.taskDescription;
-    tf_dueDate.text =  dueDate;
+    
+    tf_dueDate.text = dueDate;
+    local_dueDate = dueDate;
+    
     tf_createdDate.text = createdDate;
+    local_createdDate = createdDate;
+    
     tf_modifiedDate.text = modifiedDate;
+    local_modifiedDate = modifiedDate;
     
     RFToolbarButton *exampleButton = [RFToolbarButton new];
     
@@ -69,16 +84,32 @@
     [dateSelectionVC show];
 }
 
+- (IBAction)speakTaskInfo:(id)sender {
+    AVSpeechSynthesizer *tom = [[AVSpeechSynthesizer alloc]init];
+    
+    NSString *taskInfo = [NSString stringWithFormat:@"%@, %@, %@, %@", taskData.taskName, local_dueDate, taskData.taskDescription, local_modifiedDate];
+    
+    AVSpeechUtterance *speakTaskInfo = [AVSpeechUtterance speechUtteranceWithString:taskInfo];
+    
+    [speakTaskInfo setRate:0.2f];
+    [speakTaskInfo setVolume:0.8f];
+    
+    [tom speakUtterance:speakTaskInfo];
+}
+
+
 #pragma mark - RMDateSelectionViewController Delegates
 - (void)dateSelectionViewController:(RMDateSelectionViewController *)vc didSelectDate:(NSDate *)aDate {
+    
+    taskData.taskDueDate = aDate;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM/dd/YY '@' h:mma"];
     NSString *stringFromDate = [formatter stringFromDate:aDate];
     NSString *dateString = [NSString stringWithFormat:@"Due: %@", stringFromDate];
     
-    local_taskDueDate = aDate;
     tf_dueDate.text = dateString;
+    local_dueDate = dateString;
 }
 
 
@@ -87,10 +118,10 @@
 }
 
 - (IBAction)updateTask:(id)sender {
-    //taskModel *taskData = [[taskModel alloc]init];
-    
+    parseQueue = dispatch_queue_create("parseQueue", NULL);
+
     taskData.taskName = tf_taskName.text;
-    taskData.taskDueDate = local_taskDueDate;
+    local_taskDueDate = taskData.taskDueDate;
     taskData.taskDescription = tv_description.text;
     
     PFQuery *query = [PFQuery queryWithClassName:@"task"];
@@ -98,15 +129,24 @@
     // Retrieve the object by id
     [query getObjectInBackgroundWithId:objectID block:^(PFObject *_taskData, NSError *error) {
         
-        _taskData[@"taskStatus"] = @NO;
+        //_taskData[@"taskStatus"] = @NO;
+        _taskData[@"taskName"] = taskData.taskName;
         _taskData[@"taskDescription"] = taskData.taskDescription;
-        [_taskData saveInBackground];
+        _taskData[@"taskDueDate"] = taskData.taskDueDate;
         
-    }];
-    
-     NSLog(@"Object:%@ Updated",objectID);
-    
-    
+        NSLog(@"%@ -UPDATED", local_dueDate);
+        
+        //GCD Code
+        dispatch_async(parseQueue, ^{
+            
+            [_taskData saveEventually:^(BOOL succeeded, NSError *error)
+            {
+                NSLog(@"Object:%@ was updated.",objectID);
+            }];
+        });
+        }];
+
+
     // Schedule the notification
     /*UILocalNotification* localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = taskData.taskDueDate;
@@ -118,6 +158,7 @@
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];*/
     
+     
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"TaskBuddy"
                                                    message:@"Your Task Was Updated"
                                                   delegate:self
@@ -125,6 +166,8 @@
                                          otherButtonTitles: nil];
     
     [alert show];
+
+
 }
 
 // Event Handler for AlertView

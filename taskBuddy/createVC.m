@@ -8,10 +8,11 @@
 
 #import "createVC.h"
 #import "RFKeyboardToolbar/RFKeyboardToolbar.h"
+#import "REDActionSheet.h"
 
 
 @implementation createVC
-@synthesize tf_taskName, tf_taskDueDate, tv_taskDescription;
+@synthesize tf_taskName, tf_taskDueDate, tv_taskDescription, _budget, _category,_priority;
 
 - (void)viewDidLoad {
     
@@ -30,7 +31,6 @@
     
 }
 
-
 #pragma mark - RMDateSelectionViewController Delegates
 - (void)dateSelectionViewController:(RMDateSelectionViewController *)vc didSelectDate:(NSDate *)aDate {
     
@@ -46,6 +46,105 @@
 
 - (void)dateSelectionViewControllerDidCancel:(RMDateSelectionViewController *)vc {
     NSLog(@"User Cancelled Input");
+}
+
+- (IBAction)button_category:(id)sender {
+    [self dismissKeyboardAction];
+    
+    REDActionSheet *actionSheet = [[REDActionSheet alloc] initWithCancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitlesList:@"Work", @"Personal", @"School", nil];
+	actionSheet.actionSheetTappedButtonAtIndexBlock = ^(REDActionSheet *actionSheet, NSUInteger buttonIndex) {
+		
+        switch (buttonIndex) {
+
+            case 0: {
+                NSLog(@"Case 0");
+            }
+                break;
+                
+            case 1: {
+                NSLog(@"Case 1");
+            }
+                break;
+                
+            case 2: {
+                NSLog(@"Case 2");
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+        
+        
+	};
+	[actionSheet showInView:self.view];
+}
+
+- (IBAction)button_priority:(id)sender {
+    [self dismissKeyboardAction];
+    
+    REDActionSheet *actionSheet = [[REDActionSheet alloc] initWithCancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitlesList:@"1", @"2", @"3", nil];
+	actionSheet.actionSheetTappedButtonAtIndexBlock = ^(REDActionSheet *actionSheet, NSUInteger buttonIndex) {
+		
+        switch (buttonIndex) {
+                
+            case 0: {
+                NSLog(@"Case 0");
+            }
+                break;
+                
+            case 1: {
+                NSLog(@"Case 1");
+            }
+                break;
+                
+            case 2: {
+                NSLog(@"Case 2");
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+        
+        
+	};
+	[actionSheet showInView:self.view];
+}
+
+- (IBAction)button_budget:(id)sender {
+    [self dismissKeyboardAction];
+    
+    REDActionSheet *actionSheet = [[REDActionSheet alloc] initWithCancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitlesList:@"1", @"2", @"3", nil];
+	actionSheet.actionSheetTappedButtonAtIndexBlock = ^(REDActionSheet *actionSheet, NSUInteger buttonIndex) {
+		
+        switch (buttonIndex) {
+                
+            case 0: {
+                NSLog(@"Case 0");
+            }
+                break;
+                
+            case 1: {
+                NSLog(@"Case 1");
+            }
+                break;
+                
+            case 2: {
+                NSLog(@"Case 2");
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+        
+        
+	};
+	[actionSheet showInView:self.view];
 }
 
 
@@ -103,18 +202,7 @@
     }
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-    [self dismissKeyboardAction];
-    return YES;
-}
-
-- (IBAction)dismissKeyboard:(id)sender {
-    [self dismissKeyboardAction];
-}
-
 - (IBAction)shareContent:(id)sender {
-    
     NSString *titleString = tf_taskName.text;
     NSString *descriptionString = tv_taskDescription.text;
     
@@ -124,10 +212,18 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self dismissKeyboardAction];
+    return YES;
+}
+
+- (IBAction)dismissKeyboard:(id)sender {
+    [self dismissKeyboardAction];
+}
+
 - (void)dismissKeyboardAction {
     [tf_taskName resignFirstResponder];
     [tv_taskDescription resignFirstResponder];
 }
-
 
 @end

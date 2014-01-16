@@ -53,6 +53,7 @@
 
 -(PFQuery *)queryForTable {
     PFQuery * query = [PFQuery queryWithClassName:@"task"];
+   [query orderByAscending:@"createdAt"];
     
     return query;
 }
@@ -124,12 +125,12 @@
         
     } else {
         
+        //[self.tableView deleteRowsAtIndexPaths:@[deleteIndexPath.row] withRowAnimation:UITableViewRowAnimationLeft];
+        
         //Remove object from Tableview
         PFObject *object = [self.objects objectAtIndex:deleteIndexPath.row];
         
         [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
-          //  [self deleteRowsAtIndexPaths:@[deleteIndexPath.row] withRowAnimation:UITableViewRowAnimationLeft];
-            
             //Reload Table Data
             [self loadObjects];
         }];
