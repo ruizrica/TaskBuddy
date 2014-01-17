@@ -119,6 +119,8 @@
     
     UIAlertView *alert =  [[UIAlertView alloc]initWithTitle:@"Developer Preview" message:@"Feature Not Available" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     
+    alert.tag = 0;
+    
     [alert show];
 }
 
@@ -137,6 +139,17 @@
 // Button Action for Saving Task
 // - Needs GCD code.
 - (IBAction)saveTask:(id)sender {
+    
+    if (tf_taskName.text.length == 0 /*&& local_taskDueDate == Nil*/) {
+        
+        UIAlertView *alertNoData = [[UIAlertView alloc]initWithTitle:@"Missing Information" message:@"Please enter a Task Name and Due Date." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+        
+        alertNoData.tag = 0;
+        
+        [alertNoData show];
+        
+    } else {
+        
     taskModel *taskData = [[taskModel alloc]init];
     
     taskData.taskName = tf_taskName.text;
@@ -165,15 +178,25 @@
                                                   delegate:self
                                          cancelButtonTitle:@"Ok"
                                          otherButtonTitles: nil];
+    alert.tag = 1;
     
     [alert show];
+    }
 }
+
 
 // Event Handler for AlertView
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
+    
+    //Handle Multiple Alertviews
+    if (alertView.tag == 1) {
         
-        [self.navigationController popViewControllerAnimated:YES];
+        if (buttonIndex == 0) {
+            
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    } else {
+        NSLog(@"Alertnate Alertview Handler Called");
     }
 }
 

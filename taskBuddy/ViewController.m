@@ -10,6 +10,7 @@
 #import "createVC.h"
 #import "taskListVC.h"
 #import "menuCell.h"
+#import "CTFeedbackViewController.h"
 
 @interface ViewController () {
     NSArray *menuItems;
@@ -159,5 +160,11 @@
     
     taskListVC *listVC_object = [self.storyboard instantiateViewControllerWithIdentifier:@"taskList"];
     [self.navigationController pushViewController:listVC_object animated:YES];
+}
+- (IBAction)feedbackButton:(id)sender {
+    CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
+    feedbackViewController.toRecipients = @[@"admin@iosappsdev.org"];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 @end

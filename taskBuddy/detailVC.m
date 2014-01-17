@@ -10,7 +10,8 @@
 #import "RFKeyboardToolbar/RFKeyboardToolbar.h"
 #import "importantButton.h"
 
-#define USERNAME @"Lily Hirahara"
+#define USERNAME @"USERNAME"
+
 @import AVFoundation;
 
 @interface detailVC ()
