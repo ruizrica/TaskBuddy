@@ -16,6 +16,11 @@
 		EB4BF0A2186130370037A02D /* tb_formBack.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4BF0A1186130370037A02D /* tb_formBack.png */; };
 		EB5DC4BC18878ABE006A1E81 /* REDActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4B918878ABE006A1E81 /* REDActionSheet.m */; };
 		EB5DC4BD18878ABE006A1E81 /* REDActionSheetButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4BB18878ABE006A1E81 /* REDActionSheetButton.m */; };
+		EB5DC4C91887981C006A1E81 /* CTFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4C01887981C006A1E81 /* CTFeedbackCell.m */; };
+		EB5DC4CA1887981C006A1E81 /* CTFeedbackCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4C21887981C006A1E81 /* CTFeedbackCellItem.m */; };
+		EB5DC4CB1887981C006A1E81 /* CTFeedbackTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4C41887981C006A1E81 /* CTFeedbackTopicsViewController.m */; };
+		EB5DC4CC1887981C006A1E81 /* CTFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4C61887981C006A1E81 /* CTFeedbackViewController.m */; };
+		EB5DC4CD1887981C006A1E81 /* NSBundle+CTFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4C81887981C006A1E81 /* NSBundle+CTFeedback.m */; };
 		EB6EA3D718642A2B00FAEBB5 /* RFKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3D418642A2B00FAEBB5 /* RFKeyboardToolbar.m */; };
 		EB6EA3D818642A2B00FAEBB5 /* RFToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */; };
 		EB6EA3DB1867EB3900FAEBB5 /* menuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3DA1867EB3900FAEBB5 /* menuCell.m */; };
@@ -110,6 +115,16 @@
 		EB5DC4B918878ABE006A1E81 /* REDActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDActionSheet.m; sourceTree = "<group>"; };
 		EB5DC4BA18878ABE006A1E81 /* REDActionSheetButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDActionSheetButton.h; sourceTree = "<group>"; };
 		EB5DC4BB18878ABE006A1E81 /* REDActionSheetButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDActionSheetButton.m; sourceTree = "<group>"; };
+		EB5DC4BF1887981C006A1E81 /* CTFeedbackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCell.h; sourceTree = "<group>"; };
+		EB5DC4C01887981C006A1E81 /* CTFeedbackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackCell.m; sourceTree = "<group>"; };
+		EB5DC4C11887981C006A1E81 /* CTFeedbackCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCellItem.h; sourceTree = "<group>"; };
+		EB5DC4C21887981C006A1E81 /* CTFeedbackCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackCellItem.m; sourceTree = "<group>"; };
+		EB5DC4C31887981C006A1E81 /* CTFeedbackTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackTopicsViewController.h; sourceTree = "<group>"; };
+		EB5DC4C41887981C006A1E81 /* CTFeedbackTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackTopicsViewController.m; sourceTree = "<group>"; };
+		EB5DC4C51887981C006A1E81 /* CTFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackViewController.h; sourceTree = "<group>"; };
+		EB5DC4C61887981C006A1E81 /* CTFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackViewController.m; sourceTree = "<group>"; };
+		EB5DC4C71887981C006A1E81 /* NSBundle+CTFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTFeedback.h"; sourceTree = "<group>"; };
+		EB5DC4C81887981C006A1E81 /* NSBundle+CTFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CTFeedback.m"; sourceTree = "<group>"; };
 		EB6EA3D318642A2B00FAEBB5 /* RFKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFKeyboardToolbar.h; sourceTree = "<group>"; };
 		EB6EA3D418642A2B00FAEBB5 /* RFKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFKeyboardToolbar.m; sourceTree = "<group>"; };
 		EB6EA3D518642A2B00FAEBB5 /* RFToolbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFToolbarButton.h; sourceTree = "<group>"; };
@@ -226,6 +241,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB1470BB1888F2CF00EAE8E7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		EB242F37186F542E002A6DF7 /* DetailVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +269,7 @@
 		EB4BF066186111880037A02D /* CustomClasses */ = {
 			isa = PBXGroup;
 			children = (
+				EB5DC4BE188797FC006A1E81 /* CFFeedback */,
 				EB5DC4B718878A96006A1E81 /* REDActionSheet */,
 				EBAFC8121871F7E3000A28A4 /* SWTableViewCell */,
 				EB6EA3D218642A2B00FAEBB5 /* RFKeyboardToolbar */,
@@ -307,6 +330,23 @@
 				EB5DC4BB18878ABE006A1E81 /* REDActionSheetButton.m */,
 			);
 			name = REDActionSheet;
+			sourceTree = "<group>";
+		};
+		EB5DC4BE188797FC006A1E81 /* CFFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				EB5DC4BF1887981C006A1E81 /* CTFeedbackCell.h */,
+				EB5DC4C01887981C006A1E81 /* CTFeedbackCell.m */,
+				EB5DC4C11887981C006A1E81 /* CTFeedbackCellItem.h */,
+				EB5DC4C21887981C006A1E81 /* CTFeedbackCellItem.m */,
+				EB5DC4C31887981C006A1E81 /* CTFeedbackTopicsViewController.h */,
+				EB5DC4C41887981C006A1E81 /* CTFeedbackTopicsViewController.m */,
+				EB5DC4C51887981C006A1E81 /* CTFeedbackViewController.h */,
+				EB5DC4C61887981C006A1E81 /* CTFeedbackViewController.m */,
+				EB5DC4C71887981C006A1E81 /* NSBundle+CTFeedback.h */,
+				EB5DC4C81887981C006A1E81 /* NSBundle+CTFeedback.m */,
+			);
+			name = CFFeedback;
 			sourceTree = "<group>";
 		};
 		EB6EA3D218642A2B00FAEBB5 /* RFKeyboardToolbar */ = {
@@ -434,6 +474,7 @@
 				EBE2AE78185837B3008E70EA /* CreateVC */,
 				EBE2AE79185837C4008E70EA /* ListVC */,
 				EB242F37186F542E002A6DF7 /* DetailVC */,
+				EB1470BB1888F2CF00EAE8E7 /* Constants */,
 				EB4BF0A3186130450037A02D /* Image Assets */,
 				EB4BF066186111880037A02D /* CustomClasses */,
 				EBE2AE5918583660008E70EA /* Images.xcassets */,
@@ -655,6 +696,8 @@
 				EB4BF09918612A650037A02D /* GCPlaceholderTextView.m in Sources */,
 				EBAFC8281871FD65000A28A4 /* SWCellScrollView.m in Sources */,
 				EBAFC83718727F3D000A28A4 /* importantButton.m in Sources */,
+				EB5DC4CD1887981C006A1E81 /* NSBundle+CTFeedback.m in Sources */,
+				EB5DC4CB1887981C006A1E81 /* CTFeedbackTopicsViewController.m in Sources */,
 				EB4BF077186118A60037A02D /* RMDateSelectionViewController.m in Sources */,
 				EB242F3A186F5481002A6DF7 /* detailVC.m in Sources */,
 				EBE2AE97185842E8008E70EA /* taskModel.m in Sources */,
@@ -670,8 +713,11 @@
 				EBE2AE5218583660008E70EA /* AppDelegate.m in Sources */,
 				EBAFC8271871FD65000A28A4 /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				EB6EA3DB1867EB3900FAEBB5 /* menuCell.m in Sources */,
+				EB5DC4CA1887981C006A1E81 /* CTFeedbackCellItem.m in Sources */,
 				EBAFC82C1871FD65000A28A4 /* SWUtilityButtonView.m in Sources */,
 				EB5DC4BD18878ABE006A1E81 /* REDActionSheetButton.m in Sources */,
+				EB5DC4CC1887981C006A1E81 /* CTFeedbackViewController.m in Sources */,
+				EB5DC4C91887981C006A1E81 /* CTFeedbackCell.m in Sources */,
 				EBE2AE4E18583660008E70EA /* main.m in Sources */,
 				EBB721A51868ED5500B0E2A1 /* taskListVC.m in Sources */,
 			);
