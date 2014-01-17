@@ -9,7 +9,7 @@
 #import "createVC.h"
 #import "RFKeyboardToolbar/RFKeyboardToolbar.h"
 #import "REDActionSheet.h"
-
+#import "keyboardContants.h"
 
 @implementation createVC
 @synthesize tf_taskName, tf_taskDueDate, tv_taskDescription, _budget, _category,_priority;
@@ -23,9 +23,13 @@
     tv_taskDescription.placeholder = @"Description";
     [tf_taskName becomeFirstResponder];
     
-    RFToolbarButton *exampleButton = [RFToolbarButton new];
+    doneButton *_doneButton = [doneButton new];
+    asparagusButton *_asparagusButton = [asparagusButton new];
+    rtsButton *_rtsButton = [rtsButton new];
+    poButton *_poButton = [poButton new];
+    soButton *_soButton = [soButton new];
     
-    [RFKeyboardToolbar addToTextView:tv_taskDescription withButtons:@[exampleButton]];
+    [RFKeyboardToolbar addToTextView:tv_taskDescription withButtons:@[_doneButton, _poButton, _soButton, _rtsButton, _asparagusButton]];
     
     [self.view addSubview:tv_taskDescription];
     
@@ -140,7 +144,7 @@
 // - Needs GCD code.
 - (IBAction)saveTask:(id)sender {
     
-    if (tf_taskName.text.length == 0 /*&& local_taskDueDate == Nil*/) {
+    if (tf_taskName.text.length == 0 || local_taskDueDate == Nil) {
         
         UIAlertView *alertNoData = [[UIAlertView alloc]initWithTitle:@"Missing Information" message:@"Please enter a Task Name and Due Date." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
         
@@ -198,16 +202,6 @@
     } else {
         NSLog(@"Alertnate Alertview Handler Called");
     }
-}
-
-- (IBAction)shareContent:(id)sender {
-    NSString *titleString = tf_taskName.text;
-    NSString *descriptionString = tv_taskDescription.text;
-    
-    NSArray *objectsToShare = @[titleString,descriptionString];
-    
-    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
-    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

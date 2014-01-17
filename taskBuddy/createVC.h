@@ -32,6 +32,5 @@
 - (IBAction)selectDueDate:(id)sender;
 - (IBAction)saveTask:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
-- (IBAction)shareContent:(id)sender;
 
 @end

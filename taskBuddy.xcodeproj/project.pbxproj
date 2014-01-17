@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		8C17E892186FC9BA00EDBD12 /* parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C17E891186FC9BA00EDBD12 /* parse.framework */; };
+		EB1470C518890FC000EAE8E7 /* poButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1470C418890FC000EAE8E7 /* poButton.m */; };
+		EB1470C918890FFA00EAE8E7 /* soButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1470C818890FFA00EAE8E7 /* soButton.m */; };
+		EB1470CD1889102700EAE8E7 /* asparagusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1470CC1889102700EAE8E7 /* asparagusButton.m */; };
+		EB1470D11889107C00EAE8E7 /* rtsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1470D01889107C00EAE8E7 /* rtsButton.m */; };
+		EB1470D41889119000EAE8E7 /* keyboardContants.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1470D31889119000EAE8E7 /* keyboardContants.m */; };
+		EB1470DB1889170900EAE8E7 /* doneButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1470DA1889170900EAE8E7 /* doneButton.m */; };
 		EB242F3A186F5481002A6DF7 /* detailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB242F39186F5481002A6DF7 /* detailVC.m */; };
 		EB4BF076186118A60037A02D /* RMDateSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4BF06B186118A60037A02D /* RMDateSelectionViewController.xib */; };
 		EB4BF077186118A60037A02D /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4BF071186118A60037A02D /* RMDateSelectionViewController.m */; };
 		EB4BF09918612A650037A02D /* GCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4BF08E18612A650037A02D /* GCPlaceholderTextView.m */; };
 		EB4BF0A0186130070037A02D /* tb_formBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4BF09F186130070037A02D /* tb_formBack@2x.png */; };
-		EB4BF0A2186130370037A02D /* tb_formBack.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4BF0A1186130370037A02D /* tb_formBack.png */; };
 		EB5DC4BC18878ABE006A1E81 /* REDActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4B918878ABE006A1E81 /* REDActionSheet.m */; };
 		EB5DC4BD18878ABE006A1E81 /* REDActionSheetButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4BB18878ABE006A1E81 /* REDActionSheetButton.m */; };
 		EB5DC4C91887981C006A1E81 /* CTFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4C01887981C006A1E81 /* CTFeedbackCell.m */; };
@@ -95,6 +100,18 @@
 
 /* Begin PBXFileReference section */
 		8C17E891186FC9BA00EDBD12 /* parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = parse.framework; sourceTree = "<group>"; };
+		EB1470C318890FC000EAE8E7 /* poButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = poButton.h; path = taskbuddy/RFKeyboardToolbar/poButton.h; sourceTree = SOURCE_ROOT; };
+		EB1470C418890FC000EAE8E7 /* poButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = poButton.m; path = taskbuddy/RFKeyboardToolbar/poButton.m; sourceTree = SOURCE_ROOT; };
+		EB1470C718890FFA00EAE8E7 /* soButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = soButton.h; path = taskbuddy/RFKeyboardToolbar/soButton.h; sourceTree = SOURCE_ROOT; };
+		EB1470C818890FFA00EAE8E7 /* soButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = soButton.m; path = taskbuddy/RFKeyboardToolbar/soButton.m; sourceTree = SOURCE_ROOT; };
+		EB1470CB1889102700EAE8E7 /* asparagusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = asparagusButton.h; path = taskbuddy/RFKeyboardToolbar/asparagusButton.h; sourceTree = SOURCE_ROOT; };
+		EB1470CC1889102700EAE8E7 /* asparagusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = asparagusButton.m; path = taskbuddy/RFKeyboardToolbar/asparagusButton.m; sourceTree = SOURCE_ROOT; };
+		EB1470CF1889107C00EAE8E7 /* rtsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rtsButton.h; path = taskbuddy/RFKeyboardToolbar/rtsButton.h; sourceTree = SOURCE_ROOT; };
+		EB1470D01889107C00EAE8E7 /* rtsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rtsButton.m; path = taskbuddy/RFKeyboardToolbar/rtsButton.m; sourceTree = SOURCE_ROOT; };
+		EB1470D21889119000EAE8E7 /* keyboardContants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = keyboardContants.h; path = taskbuddy/keyboardContants.h; sourceTree = SOURCE_ROOT; };
+		EB1470D31889119000EAE8E7 /* keyboardContants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = keyboardContants.m; path = taskbuddy/keyboardContants.m; sourceTree = SOURCE_ROOT; };
+		EB1470D91889170900EAE8E7 /* doneButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = doneButton.h; path = taskbuddy/RFKeyboardToolbar/doneButton.h; sourceTree = SOURCE_ROOT; };
+		EB1470DA1889170900EAE8E7 /* doneButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = doneButton.m; path = taskbuddy/RFKeyboardToolbar/doneButton.m; sourceTree = SOURCE_ROOT; };
 		EB242F38186F5481002A6DF7 /* detailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailVC.h; sourceTree = "<group>"; };
 		EB242F39186F5481002A6DF7 /* detailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailVC.m; sourceTree = "<group>"; };
 		EB4BF06C186118A60037A02D /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/RMDateSelectionViewController.xib; sourceTree = "<group>"; };
@@ -110,7 +127,6 @@
 		EB4BF08D18612A650037A02D /* GCPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCPlaceholderTextView.h; sourceTree = "<group>"; };
 		EB4BF08E18612A650037A02D /* GCPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPlaceholderTextView.m; sourceTree = "<group>"; };
 		EB4BF09F186130070037A02D /* tb_formBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb_formBack@2x.png"; sourceTree = "<group>"; };
-		EB4BF0A1186130370037A02D /* tb_formBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tb_formBack.png; sourceTree = "<group>"; };
 		EB5DC4B818878ABE006A1E81 /* REDActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDActionSheet.h; sourceTree = "<group>"; };
 		EB5DC4B918878ABE006A1E81 /* REDActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDActionSheet.m; sourceTree = "<group>"; };
 		EB5DC4BA18878ABE006A1E81 /* REDActionSheetButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDActionSheetButton.h; sourceTree = "<group>"; };
@@ -244,8 +260,46 @@
 		EB1470BB1888F2CF00EAE8E7 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				EB1470D21889119000EAE8E7 /* keyboardContants.h */,
+				EB1470D31889119000EAE8E7 /* keyboardContants.m */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		EB1470BF18890D8600EAE8E7 /* PO */ = {
+			isa = PBXGroup;
+			children = (
+				EB1470C318890FC000EAE8E7 /* poButton.h */,
+				EB1470C418890FC000EAE8E7 /* poButton.m */,
+			);
+			name = PO;
+			sourceTree = "<group>";
+		};
+		EB1470C618890FCF00EAE8E7 /* SO */ = {
+			isa = PBXGroup;
+			children = (
+				EB1470C718890FFA00EAE8E7 /* soButton.h */,
+				EB1470C818890FFA00EAE8E7 /* soButton.m */,
+			);
+			name = SO;
+			sourceTree = "<group>";
+		};
+		EB1470CA1889100100EAE8E7 /* Asparagus */ = {
+			isa = PBXGroup;
+			children = (
+				EB1470CB1889102700EAE8E7 /* asparagusButton.h */,
+				EB1470CC1889102700EAE8E7 /* asparagusButton.m */,
+			);
+			name = Asparagus;
+			sourceTree = "<group>";
+		};
+		EB1470CE1889106700EAE8E7 /* RTS */ = {
+			isa = PBXGroup;
+			children = (
+				EB1470CF1889107C00EAE8E7 /* rtsButton.h */,
+				EB1470D01889107C00EAE8E7 /* rtsButton.m */,
+			);
+			name = RTS;
 			sourceTree = "<group>";
 		};
 		EB242F37186F542E002A6DF7 /* DetailVC */ = {
@@ -315,7 +369,6 @@
 				EBAFC82F18720193000A28A4 /* cross@2x.png */,
 				EB6EA3E018682B5500FAEBB5 /* menuIcons */,
 				EB95A737186168C7008BBF93 /* location */,
-				EB4BF0A1186130370037A02D /* tb_formBack.png */,
 				EB4BF09F186130070037A02D /* tb_formBack@2x.png */,
 			);
 			name = "Image Assets";
@@ -352,9 +405,15 @@
 		EB6EA3D218642A2B00FAEBB5 /* RFKeyboardToolbar */ = {
 			isa = PBXGroup;
 			children = (
+				EB6EA3D518642A2B00FAEBB5 /* RFToolbarButton.h */,
+				EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */,
 				EB6EA3D318642A2B00FAEBB5 /* RFKeyboardToolbar.h */,
 				EB6EA3D418642A2B00FAEBB5 /* RFKeyboardToolbar.m */,
 				EBAFC83318727EFE000A28A4 /* Done */,
+				EB1470CA1889100100EAE8E7 /* Asparagus */,
+				EB1470CE1889106700EAE8E7 /* RTS */,
+				EB1470C618890FCF00EAE8E7 /* SO */,
+				EB1470BF18890D8600EAE8E7 /* PO */,
 				EBAFC83418727F0C000A28A4 /* Important */,
 			);
 			path = RFKeyboardToolbar;
@@ -409,8 +468,8 @@
 		EBAFC83318727EFE000A28A4 /* Done */ = {
 			isa = PBXGroup;
 			children = (
-				EB6EA3D518642A2B00FAEBB5 /* RFToolbarButton.h */,
-				EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */,
+				EB1470D91889170900EAE8E7 /* doneButton.h */,
+				EB1470DA1889170900EAE8E7 /* doneButton.m */,
 			);
 			name = Done;
 			sourceTree = "<group>";
@@ -666,7 +725,6 @@
 				EB4BF0A0186130070037A02D /* tb_formBack@2x.png in Resources */,
 				EBAFC92D1873AF7C000A28A4 /* layout_topLeft@2x.png in Resources */,
 				EB95A741186168C7008BBF93 /* location-128.png in Resources */,
-				EB4BF0A2186130370037A02D /* tb_formBack.png in Resources */,
 				EBE2AE5518583660008E70EA /* Main.storyboard in Resources */,
 				EBAFC83018720193000A28A4 /* check@2x.png in Resources */,
 				EB95A740186168C7008BBF93 /* location-100.png in Resources */,
@@ -693,18 +751,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1470C918890FFA00EAE8E7 /* soButton.m in Sources */,
 				EB4BF09918612A650037A02D /* GCPlaceholderTextView.m in Sources */,
 				EBAFC8281871FD65000A28A4 /* SWCellScrollView.m in Sources */,
 				EBAFC83718727F3D000A28A4 /* importantButton.m in Sources */,
 				EB5DC4CD1887981C006A1E81 /* NSBundle+CTFeedback.m in Sources */,
 				EB5DC4CB1887981C006A1E81 /* CTFeedbackTopicsViewController.m in Sources */,
 				EB4BF077186118A60037A02D /* RMDateSelectionViewController.m in Sources */,
+				EB1470DB1889170900EAE8E7 /* doneButton.m in Sources */,
 				EB242F3A186F5481002A6DF7 /* detailVC.m in Sources */,
+				EB1470D41889119000EAE8E7 /* keyboardContants.m in Sources */,
 				EBE2AE97185842E8008E70EA /* taskModel.m in Sources */,
 				EBAFC82B1871FD65000A28A4 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				EB6EA3D818642A2B00FAEBB5 /* RFToolbarButton.m in Sources */,
 				EBB721A81868EEB700B0E2A1 /* taskListCell.m in Sources */,
 				EB5DC4BC18878ABE006A1E81 /* REDActionSheet.m in Sources */,
+				EB1470C518890FC000EAE8E7 /* poButton.m in Sources */,
 				EB6EA3D718642A2B00FAEBB5 /* RFKeyboardToolbar.m in Sources */,
 				EBAFC8291871FD65000A28A4 /* SWLongPressGestureRecognizer.m in Sources */,
 				EBE2AE7F18583802008E70EA /* createVC.m in Sources */,
@@ -717,7 +779,9 @@
 				EBAFC82C1871FD65000A28A4 /* SWUtilityButtonView.m in Sources */,
 				EB5DC4BD18878ABE006A1E81 /* REDActionSheetButton.m in Sources */,
 				EB5DC4CC1887981C006A1E81 /* CTFeedbackViewController.m in Sources */,
+				EB1470D11889107C00EAE8E7 /* rtsButton.m in Sources */,
 				EB5DC4C91887981C006A1E81 /* CTFeedbackCell.m in Sources */,
+				EB1470CD1889102700EAE8E7 /* asparagusButton.m in Sources */,
 				EBE2AE4E18583660008E70EA /* main.m in Sources */,
 				EBB721A51868ED5500B0E2A1 /* taskListVC.m in Sources */,
 			);
