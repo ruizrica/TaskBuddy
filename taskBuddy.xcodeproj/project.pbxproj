@@ -14,6 +14,8 @@
 		EB1470D11889107C00EAE8E7 /* rtsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1470D01889107C00EAE8E7 /* rtsButton.m */; };
 		EB1470D41889119000EAE8E7 /* keyboardContants.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1470D31889119000EAE8E7 /* keyboardContants.m */; };
 		EB1470DB1889170900EAE8E7 /* doneButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1470DA1889170900EAE8E7 /* doneButton.m */; };
+		EB1470E1188A239500EAE8E7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB1470DE188A239500EAE8E7 /* SVProgressHUD.bundle */; };
+		EB1470E2188A239500EAE8E7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1470E0188A239500EAE8E7 /* SVProgressHUD.m */; };
 		EB242F3A186F5481002A6DF7 /* detailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB242F39186F5481002A6DF7 /* detailVC.m */; };
 		EB4BF076186118A60037A02D /* RMDateSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4BF06B186118A60037A02D /* RMDateSelectionViewController.xib */; };
 		EB4BF077186118A60037A02D /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4BF071186118A60037A02D /* RMDateSelectionViewController.m */; };
@@ -28,7 +30,6 @@
 		EB5DC4CD1887981C006A1E81 /* NSBundle+CTFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC4C81887981C006A1E81 /* NSBundle+CTFeedback.m */; };
 		EB6EA3D718642A2B00FAEBB5 /* RFKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3D418642A2B00FAEBB5 /* RFKeyboardToolbar.m */; };
 		EB6EA3D818642A2B00FAEBB5 /* RFToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */; };
-		EB6EA3DB1867EB3900FAEBB5 /* menuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6EA3DA1867EB3900FAEBB5 /* menuCell.m */; };
 		EB6EA3E318682B8000FAEBB5 /* menu_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6EA3E118682B8000FAEBB5 /* menu_icon1.png */; };
 		EB6EA3E618682B9B00FAEBB5 /* menu_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6EA3E518682B9B00FAEBB5 /* menu_icon2.png */; };
 		EB6EA3E818682DB300FAEBB5 /* menu_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6EA3E718682DB300FAEBB5 /* menu_icon3.png */; };
@@ -112,6 +113,10 @@
 		EB1470D31889119000EAE8E7 /* keyboardContants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = keyboardContants.m; path = taskbuddy/keyboardContants.m; sourceTree = SOURCE_ROOT; };
 		EB1470D91889170900EAE8E7 /* doneButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = doneButton.h; path = taskbuddy/RFKeyboardToolbar/doneButton.h; sourceTree = SOURCE_ROOT; };
 		EB1470DA1889170900EAE8E7 /* doneButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = doneButton.m; path = taskbuddy/RFKeyboardToolbar/doneButton.m; sourceTree = SOURCE_ROOT; };
+		EB1470DD188A239500EAE8E7 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		EB1470DE188A239500EAE8E7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		EB1470DF188A239500EAE8E7 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		EB1470E0188A239500EAE8E7 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		EB242F38186F5481002A6DF7 /* detailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailVC.h; sourceTree = "<group>"; };
 		EB242F39186F5481002A6DF7 /* detailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailVC.m; sourceTree = "<group>"; };
 		EB4BF06C186118A60037A02D /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/RMDateSelectionViewController.xib; sourceTree = "<group>"; };
@@ -145,8 +150,6 @@
 		EB6EA3D418642A2B00FAEBB5 /* RFKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFKeyboardToolbar.m; sourceTree = "<group>"; };
 		EB6EA3D518642A2B00FAEBB5 /* RFToolbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFToolbarButton.h; sourceTree = "<group>"; };
 		EB6EA3D618642A2B00FAEBB5 /* RFToolbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFToolbarButton.m; sourceTree = "<group>"; };
-		EB6EA3D91867EB3900FAEBB5 /* menuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuCell.h; sourceTree = "<group>"; };
-		EB6EA3DA1867EB3900FAEBB5 /* menuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuCell.m; sourceTree = "<group>"; };
 		EB6EA3E118682B8000FAEBB5 /* menu_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon1.png; sourceTree = "<group>"; };
 		EB6EA3E518682B9B00FAEBB5 /* menu_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon2.png; sourceTree = "<group>"; };
 		EB6EA3E718682DB300FAEBB5 /* menu_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon3.png; sourceTree = "<group>"; };
@@ -302,6 +305,17 @@
 			name = RTS;
 			sourceTree = "<group>";
 		};
+		EB1470DC188A237600EAE8E7 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				EB1470DD188A239500EAE8E7 /* SVProgressHUD-Prefix.pch */,
+				EB1470DE188A239500EAE8E7 /* SVProgressHUD.bundle */,
+				EB1470DF188A239500EAE8E7 /* SVProgressHUD.h */,
+				EB1470E0188A239500EAE8E7 /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		EB242F37186F542E002A6DF7 /* DetailVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +337,7 @@
 		EB4BF066186111880037A02D /* CustomClasses */ = {
 			isa = PBXGroup;
 			children = (
+				EB1470DC188A237600EAE8E7 /* SVProgressHUD */,
 				EB5DC4BE188797FC006A1E81 /* CFFeedback */,
 				EB5DC4B718878A96006A1E81 /* REDActionSheet */,
 				EBAFC8121871F7E3000A28A4 /* SWTableViewCell */,
@@ -585,8 +600,6 @@
 			children = (
 				EBE2AE5618583660008E70EA /* ViewController.h */,
 				EBE2AE5718583660008E70EA /* ViewController.m */,
-				EB6EA3D91867EB3900FAEBB5 /* menuCell.h */,
-				EB6EA3DA1867EB3900FAEBB5 /* menuCell.m */,
 			);
 			name = MainVC;
 			sourceTree = "<group>";
@@ -710,6 +723,7 @@
 				EB95A745186168C7008BBF93 /* location-50.png in Resources */,
 				EBAFC92018739D52000A28A4 /* button_center@2x.png in Resources */,
 				EB95A746186168C7008BBF93 /* location-512.png in Resources */,
+				EB1470E1188A239500EAE8E7 /* SVProgressHUD.bundle in Resources */,
 				EBAFC92118739D52000A28A4 /* button_left@2x.png in Resources */,
 				EBAFC92B1873AF7C000A28A4 /* layout_centerLeft@2x.png in Resources */,
 				EB95A742186168C7008BBF93 /* location-25.png in Resources */,
@@ -756,6 +770,7 @@
 				EBAFC8281871FD65000A28A4 /* SWCellScrollView.m in Sources */,
 				EBAFC83718727F3D000A28A4 /* importantButton.m in Sources */,
 				EB5DC4CD1887981C006A1E81 /* NSBundle+CTFeedback.m in Sources */,
+				EB1470E2188A239500EAE8E7 /* SVProgressHUD.m in Sources */,
 				EB5DC4CB1887981C006A1E81 /* CTFeedbackTopicsViewController.m in Sources */,
 				EB4BF077186118A60037A02D /* RMDateSelectionViewController.m in Sources */,
 				EB1470DB1889170900EAE8E7 /* doneButton.m in Sources */,
@@ -774,7 +789,6 @@
 				EBE2AE5818583660008E70EA /* ViewController.m in Sources */,
 				EBE2AE5218583660008E70EA /* AppDelegate.m in Sources */,
 				EBAFC8271871FD65000A28A4 /* NSMutableArray+SWUtilityButtons.m in Sources */,
-				EB6EA3DB1867EB3900FAEBB5 /* menuCell.m in Sources */,
 				EB5DC4CA1887981C006A1E81 /* CTFeedbackCellItem.m in Sources */,
 				EBAFC82C1871FD65000A28A4 /* SWUtilityButtonView.m in Sources */,
 				EB5DC4BD18878ABE006A1E81 /* REDActionSheetButton.m in Sources */,
