@@ -99,7 +99,9 @@ dispatch_queue_t parseQueue;
 - (IBAction)speakTaskInfo:(id)sender {
     AVSpeechSynthesizer *tom = [[AVSpeechSynthesizer alloc]init];
     
-    NSString *taskInfo = [NSString stringWithFormat:@"%@, %@, %@, %@", taskData.taskName, local_dueDate, taskData.taskDescription, local_modifiedDate];
+    //NSString *taskInfo = [NSString stringWithFormat:@"%@, %@, %@, %@", taskData.taskName, local_dueDate, taskData.taskDescription, local_modifiedDate];
+    
+    NSString *taskInfo = [NSString stringWithFormat:@"%@", tv_description.text];
     
     AVSpeechUtterance *speakTaskInfo = [AVSpeechUtterance speechUtteranceWithString:taskInfo];
     

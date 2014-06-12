@@ -17,7 +17,6 @@
         NSString *local_dueDate;
         NSString *local_createdDate;
         NSString *local_modifiedDate;
-        
         NSDate *local_taskDueDate;
 }
 @property (strong, nonatomic) IBOutlet UITextField *tf_taskName;

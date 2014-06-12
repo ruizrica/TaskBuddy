@@ -41,6 +41,7 @@
 		EB95A745186168C7008BBF93 /* location-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A73D186168C7008BBF93 /* location-50.png */; };
 		EB95A746186168C7008BBF93 /* location-512.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A73E186168C7008BBF93 /* location-512.png */; };
 		EB95A747186168C7008BBF93 /* location-75.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95A73F186168C7008BBF93 /* location-75.png */; };
+		EBA98626188C9B740035EFB9 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA98625188C9B740035EFB9 /* constants.m */; };
 		EBAFC8271871FD65000A28A4 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAFC81C1871FD65000A28A4 /* NSMutableArray+SWUtilityButtons.m */; };
 		EBAFC8281871FD65000A28A4 /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAFC81E1871FD65000A28A4 /* SWCellScrollView.m */; };
 		EBAFC8291871FD65000A28A4 /* SWLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAFC8201871FD65000A28A4 /* SWLongPressGestureRecognizer.m */; };
@@ -161,6 +162,8 @@
 		EB95A73D186168C7008BBF93 /* location-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-50.png"; sourceTree = "<group>"; };
 		EB95A73E186168C7008BBF93 /* location-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-512.png"; sourceTree = "<group>"; };
 		EB95A73F186168C7008BBF93 /* location-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-75.png"; sourceTree = "<group>"; };
+		EBA98624188C9B740035EFB9 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = constants.h; path = taskbuddy/constants.h; sourceTree = SOURCE_ROOT; };
+		EBA98625188C9B740035EFB9 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = constants.m; path = taskbuddy/constants.m; sourceTree = SOURCE_ROOT; };
 		EBAFC81A1871FD65000A28A4 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = PodFiles/Constants.h; sourceTree = "<group>"; };
 		EBAFC81B1871FD65000A28A4 /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+SWUtilityButtons.h"; path = "PodFiles/NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
 		EBAFC81C1871FD65000A28A4 /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+SWUtilityButtons.m"; path = "PodFiles/NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 			children = (
 				EB1470D21889119000EAE8E7 /* keyboardContants.h */,
 				EB1470D31889119000EAE8E7 /* keyboardContants.m */,
+				EBA98624188C9B740035EFB9 /* constants.h */,
+				EBA98625188C9B740035EFB9 /* constants.m */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -676,7 +681,7 @@
 		EBE2AE361858365F008E70EA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "iOS Apps Development";
 				TargetAttributes = {
 					EBE2AE3D18583660008E70EA = {
@@ -780,6 +785,7 @@
 				EBAFC82B1871FD65000A28A4 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				EB6EA3D818642A2B00FAEBB5 /* RFToolbarButton.m in Sources */,
 				EBB721A81868EEB700B0E2A1 /* taskListCell.m in Sources */,
+				EBA98626188C9B740035EFB9 /* constants.m in Sources */,
 				EB5DC4BC18878ABE006A1E81 /* REDActionSheet.m in Sources */,
 				EB1470C518890FC000EAE8E7 /* poButton.m in Sources */,
 				EB6EA3D718642A2B00FAEBB5 /* RFKeyboardToolbar.m in Sources */,
@@ -866,7 +872,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -905,7 +910,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -981,7 +985,6 @@
 		EBE2AE7418583660008E70EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/taskBuddy.app/taskBuddy";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1004,7 +1007,6 @@
 		EBE2AE7518583660008E70EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/taskBuddy.app/taskBuddy";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@import AVFoundation;
 
-@interface ViewController : UIViewController</*UITableViewDelegate, UITableViewDataSource, */UITextViewDelegate>
+@interface ViewController : UIViewController<UITextViewDelegate>
+- (IBAction)speak:(id)sender;
 
 - (IBAction)createTaskButton:(id)sender;
 - (IBAction)taskListButton:(id)sender;
-//@property (strong, nonatomic) IBOutlet UITableView *menuTableView;
 - (IBAction)clearBadges:(id)sender;
 
 

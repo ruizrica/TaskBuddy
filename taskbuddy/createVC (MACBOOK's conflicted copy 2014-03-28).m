@@ -12,8 +12,12 @@
 #import "keyboardContants.h"
 #import "SVProgressHUD.h"
 
+@interface createVC ()
+
+@end
+
 @implementation createVC
-@synthesize tf_taskName, tf_taskDueDate, tv_taskDescription, _budget, _category,_priority;
+@synthesize tf_taskName, tf_taskDueDate, tv_taskDescription, _budget, _category,_priority, userImageView, dataModel;
 
 - (void)viewDidLoad {
     
@@ -25,12 +29,12 @@
     [tf_taskName becomeFirstResponder];
     
     doneButton *_doneButton = [doneButton new];
-    asparagusButton *_asparagusButton = [asparagusButton new];
-    rtsButton *_rtsButton = [rtsButton new];
-    poButton *_poButton = [poButton new];
-    soButton *_soButton = [soButton new];
+    //asparagusButton *_asparagusButton = [asparagusButton new];
+    //rtsButton *_rtsButton = [rtsButton new];
+    //poButton *_poButton = [poButton new];
+    //soButton *_soButton = [soButton new];
     
-    [RFKeyboardToolbar addToTextView:tv_taskDescription withButtons:@[_doneButton, _poButton, _soButton, _rtsButton, _asparagusButton]];
+    [RFKeyboardToolbar addToTextView:tv_taskDescription withButtons:@[_doneButton/*, _poButton, _soButton, _rtsButton, _asparagusButton*/]];
     
     [self.view addSubview:tv_taskDescription];
     
@@ -54,34 +58,16 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    //taskModel *taskData = [[taskModel alloc]init];
+    UIImage *userImage = info[UIImagePickerControllerOriginalImage];
+    local_taskImage = userImage;
+    userImageView.image = userImage;
     
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    local_taskImage = chosenImage;
+    [picker dismissViewControllerAnimated:YES completion:nil];
     
-    // Access the uncropped image from info dictionary
-    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    
-    // Dismiss controller
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-    // Resize image
-    UIGraphicsBeginImageContext(CGSizeMake(640, 960));
-    [image drawInRect: CGRectMake(0, 0, 640, 960)];
-    //UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    // Upload image
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.05f);
-    //[self uploadImage:imageData];
-    
-    PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:imageData];
-    
-    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            NSLog(@"Image Uploaded");
-        }}];
-    
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    NSLog(@"User Cancelled Selection");
 }
 
 
@@ -106,22 +92,30 @@
     [self dismissKeyboardAction];
     
     REDActionSheet *actionSheet = [[REDActionSheet alloc] initWithCancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitlesList:@"Work", @"Personal", @"School", nil];
+    
 	actionSheet.actionSheetTappedButtonAtIndexBlock = ^(REDActionSheet *actionSheet, NSUInteger buttonIndex) {
 		
         switch (buttonIndex) {
 
             case 0: {
                 NSLog(@"Case 0");
+                _category.imageView.image = [UIImage imageNamed:@""];
+                _category.titleLabel.text = @"Work";
             }
                 break;
                 
             case 1: {
                 NSLog(@"Case 1");
+                _category.imageView.image = [UIImage imageNamed:@""];
+                _category.titleLabel.text = @"Personal";
+                
             }
                 break;
                 
             case 2: {
                 NSLog(@"Case 2");
+                _category.imageView.image = [UIImage imageNamed:@""];
+                _category.titleLabel.text = @"School";
             }
                 break;
                 
@@ -194,6 +188,9 @@
 // - Needs GCD code.
 - (IBAction)saveTask:(id)sender {
     
+    dispatch_queue_t parseUpload;
+    parseUpload = dispatch_queue_create("parseUpload", NULL);
+    
     if (tf_taskName.text.length == 0 || local_taskDueDate == Nil) {
         
         UIAlertView *alertNoData = [[UIAlertView alloc]initWithTitle:@"Missing Information" message:@"Please enter a Task Name and Due Date." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
@@ -203,23 +200,31 @@
         [alertNoData show];
         
     } else {
-        
-    taskModel *taskData = [[taskModel alloc]init];
     
-    taskData.taskName = tf_taskName.text;
-    taskData.taskDueDate = local_taskDueDate;
-    taskData.taskDescription = tv_taskDescription.text;
-    //taskData.taskImage = local_taskImage;
-        
+    dataModel.taskName = tf_taskName.text;
+    dataModel.taskDueDate = local_taskDueDate;
+    dataModel.taskDescription = tv_taskDescription.text;
+    dataModel.taskImage = local_taskImage;
     
     
     PFObject *taskObject = [PFObject objectWithClassName:@"task"];
         
-    [taskObject setObject:taskData.taskName forKey:@"taskName"];
-    [taskObject setObject:taskData.taskDueDate forKey:@"taskDueDate"];
-    [taskObject setObject:taskData.taskDescription forKey:@"taskDescription"];
-    //[taskObject setObject:taskData.taskImage forKey:@"taskImage"];
-    [taskObject saveInBackground];
+    [taskObject setObject:dataModel.taskName forKey:@"taskName"];
+    [taskObject setObject:dataModel.taskDueDate forKey:@"taskDueDate"];
+    [taskObject setObject:dataModel.taskDescription forKey:@"taskDescription"];
+    [taskObject setObject:dataModel.taskImage forKey:@"taskImage"];
+    [SVProgressHUD show];
+    
+        dispatch_async(parseUpload, ^{
+            [taskObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [SVProgressHUD dismiss];
+                [SVProgressHUD showSuccessWithStatus:@"Task Saved"];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:YES];
+                });
+            }];
+        });
     
     // Schedule the notification
     /*UILocalNotification* localNotification = [[UILocalNotification alloc] init];
@@ -236,10 +241,6 @@
     //UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"TaskBuddy"message:@"Your Task Was Saved" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     //alert.tag = 1;
     //[alert show];
-        
-    [SVProgressHUD showSuccessWithStatus:@"Task Saved"];
-        
-    [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
